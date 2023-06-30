@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  sentence
 //
-//  Created by deepvisions on 2023/06/30.
+//  Created by terry on 2023/06/30.
 //
 
 import UIKit
