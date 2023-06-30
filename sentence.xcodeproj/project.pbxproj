@@ -20,6 +20,8 @@
 		76CD12ED2A4EA85200A0CFD3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12EC2A4EA85200A0CFD3 /* ProfileViewController.swift */; };
 		76CD12F02A4EB13D00A0CFD3 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12EF2A4EB13D00A0CFD3 /* UILabel.swift */; };
 		76CD12F22A4EB7F000A0CFD3 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12F12A4EB7F000A0CFD3 /* ContentCell.swift */; };
+		76CD12F42A4EBDF400A0CFD3 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12F32A4EBDF400A0CFD3 /* BannerView.swift */; };
+		76CD12F62A4EBF8F00A0CFD3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12F52A4EBF8F00A0CFD3 /* BaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		76CD12EC2A4EA85200A0CFD3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		76CD12EF2A4EB13D00A0CFD3 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		76CD12F12A4EB7F000A0CFD3 /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
+		76CD12F32A4EBDF400A0CFD3 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		76CD12F52A4EBF8F00A0CFD3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 				76CD12CD2A4E9B2500A0CFD3 /* SceneDelegate.swift */,
 				76CD12E32A4EA77900A0CFD3 /* Controller */,
 				76CD12DF2A4EA1EB00A0CFD3 /* BaseTabBarController.swift */,
+				76CD12F52A4EBF8F00A0CFD3 /* BaseView.swift */,
 				76CD12E12A4EA6F900A0CFD3 /* BaseViewController.swift */,
 				76CD12D12A4E9B2500A0CFD3 /* Main.storyboard */,
 				76CD12D42A4E9B2700A0CFD3 /* Assets.xcassets */,
@@ -99,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				76CD12CF2A4E9B2500A0CFD3 /* HomeViewController.swift */,
+				76CD12F32A4EBDF400A0CFD3 /* BannerView.swift */,
 				76CD12F12A4EB7F000A0CFD3 /* ContentCell.swift */,
 			);
 			path = home;
@@ -209,6 +215,8 @@
 			files = (
 				76CD12E92A4EA81300A0CFD3 /* SearchViewController.swift in Sources */,
 				76CD12EB2A4EA83500A0CFD3 /* ActiveViewController.swift in Sources */,
+				76CD12F42A4EBDF400A0CFD3 /* BannerView.swift in Sources */,
+				76CD12F62A4EBF8F00A0CFD3 /* BaseView.swift in Sources */,
 				76CD12E22A4EA6F900A0CFD3 /* BaseViewController.swift in Sources */,
 				76CD12E02A4EA1EB00A0CFD3 /* BaseTabBarController.swift in Sources */,
 				76CD12F02A4EB13D00A0CFD3 /* UILabel.swift in Sources */,

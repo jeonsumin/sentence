@@ -14,10 +14,14 @@ class HomeViewController: UITableViewController {
         navigationTitleConfigure()
     
         tableView.register(ContentCell.self, forCellReuseIdentifier: "cell")
+        
+        let header = BannerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 150))
+        
+        tableView.tableHeaderView = header
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
