@@ -22,8 +22,9 @@ class BaseTabBarController: UITabBarController {
         let tabBarItem = UITabBarItem(title: nil,
                                       image: UIImage(named: "feed"),
                                       tag: 0)
-        viewController.tabBarItem = tabBarItem
         
+        tabBarItem.selectedImage = UIImage(named: "feed_on")
+        viewController.tabBarItem = tabBarItem
         return viewController
     }()
     
@@ -32,6 +33,7 @@ class BaseTabBarController: UITabBarController {
         let tabBarItem = UITabBarItem(title: nil,
                                       image: UIImage(named: "search"),
                                       tag: 1)
+        tabBarItem.selectedImage = UIImage(named: "search_on")
         viewController.tabBarItem = tabBarItem
         
         return viewController
@@ -42,6 +44,7 @@ class BaseTabBarController: UITabBarController {
         let tabBarItem = UITabBarItem(title: nil,
                                       image: UIImage(named: "plus"),
                                       tag: 2)
+        tabBarItem.selectedImage = UIImage(named: "plus_on")
         viewController.tabBarItem = tabBarItem
         
         return viewController
@@ -52,6 +55,7 @@ class BaseTabBarController: UITabBarController {
         let tabBarItem = UITabBarItem(title: nil,
                                       image: UIImage(named: "bell"),
                                       tag: 3)
+        tabBarItem.selectedImage = UIImage(named: "bell_on")
         viewController.tabBarItem = tabBarItem
 
         
@@ -63,6 +67,7 @@ class BaseTabBarController: UITabBarController {
         let tabBarItem = UITabBarItem(title: nil,
                                       image: UIImage(named: "profile"),
                                       tag: 4)
+        tabBarItem.selectedImage = UIImage(named: "profile_on")
         viewController.tabBarItem = tabBarItem
         
         return viewController
