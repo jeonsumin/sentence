@@ -9,13 +9,17 @@ import UIKit
 import SnapKit
 
 protocol ContentCellDelegate {
-    func tappedHeartButton()
+    func tappedHeartButton(index: Int)
     func tappedBookmarkButton()
     func tappedMoreButton()
 }
 
 class ContentCell: UITableViewCell {
     var delegate :ContentCellDelegate!
+ 
+    var index:Int = 0
+    var isLike = false
+    var isBookmark = false
     
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
@@ -111,11 +115,16 @@ class ContentCell: UITableViewCell {
     }
     
     @objc func tappedHeartButton(){
-        delegate.tappedHeartButton()
+        delegate.tappedHeartButton(index: index)
+        isLike = !isLike
+        isLike ? heartButton.setImage(UIImage(named: "heart_on"), for: .normal) : heartButton.setImage(UIImage(named: "heart"), for: .normal)
+        
     }
     
     @objc func tappedBookmarkButton(){
         delegate.tappedBookmarkButton()
+        isBookmark = !isBookmark
+        isBookmark ? bookmarkButton.setImage(UIImage(named: "bookmark_on"), for: .normal) : bookmarkButton.setImage(UIImage(named: "bookmark"), for: .normal)
     }
     
     @objc func tappedMoreButton(){
