@@ -29,7 +29,7 @@ class BaseTabBarController: UITabBarController {
     }()
     
     private lazy var searchViewController: UIViewController = {
-        let viewController = SearchViewController()
+        let viewController = UINavigationController(rootViewController: SearchViewController()) 
         let tabBarItem = UITabBarItem(title: nil,
                                       image: UIImage(named: "search"),
                                       tag: 1)

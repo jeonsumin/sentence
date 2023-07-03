@@ -25,6 +25,8 @@
 		76E480B02A52606700C85FDD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 76E480AF2A52606700C85FDD /* SnapKit */; };
 		76E480B42A5292DC00C85FDD /* UIAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E480B32A5292DC00C85FDD /* UIAction.swift */; };
 		76E480B72A5296CC00C85FDD /* PreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E480B62A5296CC00C85FDD /* PreviewController.swift */; };
+		76E480BA2A52A98600C85FDD /* FavoriteSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E480B92A52A98600C85FDD /* FavoriteSearchCell.swift */; };
+		76E480BE2A52B56400C85FDD /* BaseSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E480BD2A52B56400C85FDD /* BaseSearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		76CD12F52A4EBF8F00A0CFD3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		76E480B32A5292DC00C85FDD /* UIAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAction.swift; sourceTree = "<group>"; };
 		76E480B62A5296CC00C85FDD /* PreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewController.swift; sourceTree = "<group>"; };
+		76E480B92A52A98600C85FDD /* FavoriteSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchCell.swift; sourceTree = "<group>"; };
+		76E480BD2A52B56400C85FDD /* BaseSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +114,7 @@
 			children = (
 				76E480B52A5296AE00C85FDD /* View */,
 				76CD12CF2A4E9B2500A0CFD3 /* HomeViewController.swift */,
-				76CD12F32A4EBDF400A0CFD3 /* BannerView.swift */,
-				76CD12F12A4EB7F000A0CFD3 /* ContentCell.swift */,
+				76E480B62A5296CC00C85FDD /* PreviewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				76CD12E82A4EA81300A0CFD3 /* SearchViewController.swift */,
+				76E480B82A52A96500C85FDD /* View */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -169,7 +173,17 @@
 		76E480B52A5296AE00C85FDD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				76E480B62A5296CC00C85FDD /* PreviewController.swift */,
+				76CD12F32A4EBDF400A0CFD3 /* BannerView.swift */,
+				76CD12F12A4EB7F000A0CFD3 /* ContentCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		76E480B82A52A96500C85FDD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76E480B92A52A98600C85FDD /* FavoriteSearchCell.swift */,
+				76E480BD2A52B56400C85FDD /* BaseSearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,6 +267,7 @@
 			files = (
 				76E480B72A5296CC00C85FDD /* PreviewController.swift in Sources */,
 				76CD12E92A4EA81300A0CFD3 /* SearchViewController.swift in Sources */,
+				76E480BA2A52A98600C85FDD /* FavoriteSearchCell.swift in Sources */,
 				76CD12EB2A4EA83500A0CFD3 /* ActiveViewController.swift in Sources */,
 				76CD12F42A4EBDF400A0CFD3 /* BannerView.swift in Sources */,
 				76CD12F62A4EBF8F00A0CFD3 /* BaseView.swift in Sources */,
@@ -261,6 +276,7 @@
 				76CD12F02A4EB13D00A0CFD3 /* UILabel.swift in Sources */,
 				76CD12D02A4E9B2500A0CFD3 /* HomeViewController.swift in Sources */,
 				76CD12CC2A4E9B2500A0CFD3 /* AppDelegate.swift in Sources */,
+				76E480BE2A52B56400C85FDD /* BaseSearchView.swift in Sources */,
 				76CD12F22A4EB7F000A0CFD3 /* ContentCell.swift in Sources */,
 				76E480B42A5292DC00C85FDD /* UIAction.swift in Sources */,
 				76CD12ED2A4EA85200A0CFD3 /* ProfileViewController.swift in Sources */,
