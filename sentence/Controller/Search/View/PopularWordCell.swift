@@ -11,7 +11,6 @@ import SnapKit
 class PopularWordCell: UITableViewCell {
     static let identifier = "popularWordCell"
     
-    var rank: Int?
     
     private lazy var cellView: UIView = {
         let view = UIView(frame: .zero)
@@ -20,14 +19,15 @@ class PopularWordCell: UITableViewCell {
         return view
     }()
     
-    private lazy var rankLabel: UILabel = {
+    lazy var rankLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20,weight: .bold)
         label.textColor = .purple
         
         return label
     }()
-    private lazy var popularWordLabel: UILabel = {
+    
+    lazy var popularWordLabel: UILabel = {
         let label = UILabel()
         label.text = "이별"
         label.font = .systemFont(ofSize: 20,weight: .semibold)
@@ -66,7 +66,6 @@ class PopularWordCell: UITableViewCell {
             $0.leading.equalTo(cellView.snp.leading).offset(20)
             $0.centerY.equalTo(cellView.snp.centerY)
         }
-        rankLabel.text = "\(rank ?? 0)"
         popularWordLabel.snp.makeConstraints{
             $0.leading.equalTo(rankLabel.snp.trailing).offset(23)
             $0.centerY.equalTo(rankLabel.snp.centerY)

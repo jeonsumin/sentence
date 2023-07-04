@@ -10,6 +10,7 @@
 		76C898F32A53BA56000F75BF /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C898F22A53BA56000F75BF /* UIColor+.swift */; };
 		76C898F52A53BC55000F75BF /* SearchSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C898F42A53BC55000F75BF /* SearchSegmentedControl.swift */; };
 		76C898F82A53EDE1000F75BF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C898F72A53EDE1000F75BF /* NotificationViewController.swift */; };
+		76C898FB2A53F6CF000F75BF /* ActiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C898FA2A53F6CF000F75BF /* ActiveTableViewCell.swift */; };
 		76CD12CC2A4E9B2500A0CFD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12CB2A4E9B2500A0CFD3 /* AppDelegate.swift */; };
 		76CD12CE2A4E9B2500A0CFD3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12CD2A4E9B2500A0CFD3 /* SceneDelegate.swift */; };
 		76CD12D02A4E9B2500A0CFD3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12CF2A4E9B2500A0CFD3 /* HomeViewController.swift */; };
@@ -17,7 +18,6 @@
 		76CD12D52A4E9B2700A0CFD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CD12D42A4E9B2700A0CFD3 /* Assets.xcassets */; };
 		76CD12D82A4E9B2700A0CFD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CD12D62A4E9B2700A0CFD3 /* LaunchScreen.storyboard */; };
 		76CD12E02A4EA1EB00A0CFD3 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12DF2A4EA1EB00A0CFD3 /* BaseTabBarController.swift */; };
-		76CD12E22A4EA6F900A0CFD3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12E12A4EA6F900A0CFD3 /* BaseViewController.swift */; };
 		76CD12E92A4EA81300A0CFD3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12E82A4EA81300A0CFD3 /* SearchViewController.swift */; };
 		76CD12EB2A4EA83500A0CFD3 /* ActiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12EA2A4EA83500A0CFD3 /* ActiveViewController.swift */; };
 		76CD12ED2A4EA85200A0CFD3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12EC2A4EA85200A0CFD3 /* ProfileViewController.swift */; };
@@ -37,6 +37,7 @@
 		76C898F22A53BA56000F75BF /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		76C898F42A53BC55000F75BF /* SearchSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSegmentedControl.swift; sourceTree = "<group>"; };
 		76C898F72A53EDE1000F75BF /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		76C898FA2A53F6CF000F75BF /* ActiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTableViewCell.swift; sourceTree = "<group>"; };
 		76CD12C82A4E9B2500A0CFD3 /* sentence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sentence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76CD12CB2A4E9B2500A0CFD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76CD12CD2A4E9B2500A0CFD3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,7 +47,6 @@
 		76CD12D72A4E9B2700A0CFD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76CD12D92A4E9B2700A0CFD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76CD12DF2A4EA1EB00A0CFD3 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
-		76CD12E12A4EA6F900A0CFD3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		76CD12E82A4EA81300A0CFD3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		76CD12EA2A4EA83500A0CFD3 /* ActiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveViewController.swift; sourceTree = "<group>"; };
 		76CD12EC2A4EA85200A0CFD3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +79,14 @@
 				76C898F72A53EDE1000F75BF /* NotificationViewController.swift */,
 			);
 			path = Notification;
+			sourceTree = "<group>";
+		};
+		76C898F92A53F6C3000F75BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76C898FA2A53F6CF000F75BF /* ActiveTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		76CD12BF2A4E9B2500A0CFD3 = {
@@ -149,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				76CD12EA2A4EA83500A0CFD3 /* ActiveViewController.swift */,
+				76C898F92A53F6C3000F75BF /* View */,
 			);
 			path = Active;
 			sourceTree = "<group>";
@@ -175,7 +184,6 @@
 			children = (
 				76CD12DF2A4EA1EB00A0CFD3 /* BaseTabBarController.swift */,
 				76CD12F52A4EBF8F00A0CFD3 /* BaseView.swift */,
-				76CD12E12A4EA6F900A0CFD3 /* BaseViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -200,9 +208,9 @@
 		76E480B82A52A96500C85FDD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				76E480B92A52A98600C85FDD /* SearchResultCell.swift */,
 				76E480BD2A52B56400C85FDD /* BaseSearchView.swift */,
 				76E480C12A53AE6F00C85FDD /* PopularWordCell.swift */,
+				76E480B92A52A98600C85FDD /* SearchResultCell.swift */,
 				76C898F42A53BC55000F75BF /* SearchSegmentedControl.swift */,
 			);
 			path = View;
@@ -291,7 +299,6 @@
 				76CD12EB2A4EA83500A0CFD3 /* ActiveViewController.swift in Sources */,
 				76CD12F42A4EBDF400A0CFD3 /* BannerView.swift in Sources */,
 				76CD12F62A4EBF8F00A0CFD3 /* BaseView.swift in Sources */,
-				76CD12E22A4EA6F900A0CFD3 /* BaseViewController.swift in Sources */,
 				76CD12E02A4EA1EB00A0CFD3 /* BaseTabBarController.swift in Sources */,
 				76CD12F02A4EB13D00A0CFD3 /* UILabel.swift in Sources */,
 				76CD12D02A4E9B2500A0CFD3 /* HomeViewController.swift in Sources */,
@@ -300,6 +307,7 @@
 				76CD12CC2A4E9B2500A0CFD3 /* AppDelegate.swift in Sources */,
 				76E480BE2A52B56400C85FDD /* BaseSearchView.swift in Sources */,
 				76E480C22A53AE6F00C85FDD /* PopularWordCell.swift in Sources */,
+				76C898FB2A53F6CF000F75BF /* ActiveTableViewCell.swift in Sources */,
 				76CD12F22A4EB7F000A0CFD3 /* ContentCell.swift in Sources */,
 				76E480B42A5292DC00C85FDD /* CommonUtils.swift in Sources */,
 				76CD12ED2A4EA85200A0CFD3 /* ProfileViewController.swift in Sources */,

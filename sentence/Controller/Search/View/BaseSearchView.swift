@@ -134,8 +134,15 @@ extension BaseSearchView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PopularWordCell.identifier, for: indexPath) as! PopularWordCell
         cell.selectionStyle = .none
-        cell.rank = indexPath.row
-        
+        cell.rankLabel.text = "\(indexPath.row + 1)"
+        let word = [
+            "사랑",
+            "믿음",
+            "소망",
+            "세상에서가장작은도서관",
+            "책속문장나눔",
+        ]
+        cell.popularWordLabel.text = word[indexPath.row]
         
         return cell
     }
