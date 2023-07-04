@@ -10,5 +10,6 @@ import UIKit
 class ActiveViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        CommonUtils.navigationTitleConfigure(viewController: self, navigationTitle: "Activity")
     }
 }

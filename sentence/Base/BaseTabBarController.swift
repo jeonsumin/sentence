@@ -40,18 +40,19 @@ class BaseTabBarController: UITabBarController {
     }()
     
     private lazy var createSentenceViewController: UIViewController = {
-        let viewController = UIViewController()
+        let viewController = sentence.ProfileViewController()
         let tabBarItem = UITabBarItem(title: nil,
                                       image: UIImage(named: "plus"),
                                       tag: 2)
         tabBarItem.selectedImage = UIImage(named: "plus_on")
         viewController.tabBarItem = tabBarItem
+        viewController.modalPresentationStyle = .fullScreen
         
         return viewController
     }()
     
     private lazy var activeViewController: UIViewController = {
-        let viewController = ActiveViewController()
+        let viewController = UINavigationController(rootViewController: ActiveViewController())
         let tabBarItem = UITabBarItem(title: nil,
                                       image: UIImage(named: "bell"),
                                       tag: 3)

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76C898F32A53BA56000F75BF /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C898F22A53BA56000F75BF /* UIColor+.swift */; };
+		76C898F52A53BC55000F75BF /* SearchSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C898F42A53BC55000F75BF /* SearchSegmentedControl.swift */; };
+		76C898F82A53EDE1000F75BF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C898F72A53EDE1000F75BF /* NotificationViewController.swift */; };
 		76CD12CC2A4E9B2500A0CFD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12CB2A4E9B2500A0CFD3 /* AppDelegate.swift */; };
 		76CD12CE2A4E9B2500A0CFD3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12CD2A4E9B2500A0CFD3 /* SceneDelegate.swift */; };
 		76CD12D02A4E9B2500A0CFD3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12CF2A4E9B2500A0CFD3 /* HomeViewController.swift */; };
@@ -23,13 +26,17 @@
 		76CD12F42A4EBDF400A0CFD3 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12F32A4EBDF400A0CFD3 /* BannerView.swift */; };
 		76CD12F62A4EBF8F00A0CFD3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD12F52A4EBF8F00A0CFD3 /* BaseView.swift */; };
 		76E480B02A52606700C85FDD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 76E480AF2A52606700C85FDD /* SnapKit */; };
-		76E480B42A5292DC00C85FDD /* UIAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E480B32A5292DC00C85FDD /* UIAction.swift */; };
+		76E480B42A5292DC00C85FDD /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E480B32A5292DC00C85FDD /* CommonUtils.swift */; };
 		76E480B72A5296CC00C85FDD /* PreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E480B62A5296CC00C85FDD /* PreviewController.swift */; };
-		76E480BA2A52A98600C85FDD /* FavoriteSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E480B92A52A98600C85FDD /* FavoriteSearchCell.swift */; };
+		76E480BA2A52A98600C85FDD /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E480B92A52A98600C85FDD /* SearchResultCell.swift */; };
 		76E480BE2A52B56400C85FDD /* BaseSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E480BD2A52B56400C85FDD /* BaseSearchView.swift */; };
+		76E480C22A53AE6F00C85FDD /* PopularWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E480C12A53AE6F00C85FDD /* PopularWordCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		76C898F22A53BA56000F75BF /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		76C898F42A53BC55000F75BF /* SearchSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSegmentedControl.swift; sourceTree = "<group>"; };
+		76C898F72A53EDE1000F75BF /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		76CD12C82A4E9B2500A0CFD3 /* sentence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sentence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76CD12CB2A4E9B2500A0CFD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76CD12CD2A4E9B2500A0CFD3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,10 +54,11 @@
 		76CD12F12A4EB7F000A0CFD3 /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		76CD12F32A4EBDF400A0CFD3 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		76CD12F52A4EBF8F00A0CFD3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		76E480B32A5292DC00C85FDD /* UIAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAction.swift; sourceTree = "<group>"; };
+		76E480B32A5292DC00C85FDD /* CommonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
 		76E480B62A5296CC00C85FDD /* PreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewController.swift; sourceTree = "<group>"; };
-		76E480B92A52A98600C85FDD /* FavoriteSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchCell.swift; sourceTree = "<group>"; };
+		76E480B92A52A98600C85FDD /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		76E480BD2A52B56400C85FDD /* BaseSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSearchView.swift; sourceTree = "<group>"; };
+		76E480C12A53AE6F00C85FDD /* PopularWordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularWordCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76C898F62A53EDB7000F75BF /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				76C898F72A53EDE1000F75BF /* NotificationViewController.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		76CD12BF2A4E9B2500A0CFD3 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +117,7 @@
 		76CD12E32A4EA77900A0CFD3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				76C898F62A53EDB7000F75BF /* Notification */,
 				76CD12E72A4EA7FF00A0CFD3 /* Profile */,
 				76CD12E62A4EA7EA00A0CFD3 /* Active */,
 				76CD12E52A4EA7E100A0CFD3 /* Search */,
@@ -112,9 +129,9 @@
 		76CD12E42A4EA7DE00A0CFD3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				76E480B52A5296AE00C85FDD /* View */,
 				76CD12CF2A4E9B2500A0CFD3 /* HomeViewController.swift */,
 				76E480B62A5296CC00C85FDD /* PreviewController.swift */,
+				76E480B52A5296AE00C85FDD /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -148,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				76CD12EF2A4EB13D00A0CFD3 /* UILabel.swift */,
+				76C898F22A53BA56000F75BF /* UIColor+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -165,7 +183,7 @@
 		76E480B22A5292C700C85FDD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				76E480B32A5292DC00C85FDD /* UIAction.swift */,
+				76E480B32A5292DC00C85FDD /* CommonUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -182,8 +200,10 @@
 		76E480B82A52A96500C85FDD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				76E480B92A52A98600C85FDD /* FavoriteSearchCell.swift */,
+				76E480B92A52A98600C85FDD /* SearchResultCell.swift */,
 				76E480BD2A52B56400C85FDD /* BaseSearchView.swift */,
+				76E480C12A53AE6F00C85FDD /* PopularWordCell.swift */,
+				76C898F42A53BC55000F75BF /* SearchSegmentedControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -267,7 +287,7 @@
 			files = (
 				76E480B72A5296CC00C85FDD /* PreviewController.swift in Sources */,
 				76CD12E92A4EA81300A0CFD3 /* SearchViewController.swift in Sources */,
-				76E480BA2A52A98600C85FDD /* FavoriteSearchCell.swift in Sources */,
+				76E480BA2A52A98600C85FDD /* SearchResultCell.swift in Sources */,
 				76CD12EB2A4EA83500A0CFD3 /* ActiveViewController.swift in Sources */,
 				76CD12F42A4EBDF400A0CFD3 /* BannerView.swift in Sources */,
 				76CD12F62A4EBF8F00A0CFD3 /* BaseView.swift in Sources */,
@@ -275,12 +295,16 @@
 				76CD12E02A4EA1EB00A0CFD3 /* BaseTabBarController.swift in Sources */,
 				76CD12F02A4EB13D00A0CFD3 /* UILabel.swift in Sources */,
 				76CD12D02A4E9B2500A0CFD3 /* HomeViewController.swift in Sources */,
+				76C898F82A53EDE1000F75BF /* NotificationViewController.swift in Sources */,
+				76C898F52A53BC55000F75BF /* SearchSegmentedControl.swift in Sources */,
 				76CD12CC2A4E9B2500A0CFD3 /* AppDelegate.swift in Sources */,
 				76E480BE2A52B56400C85FDD /* BaseSearchView.swift in Sources */,
+				76E480C22A53AE6F00C85FDD /* PopularWordCell.swift in Sources */,
 				76CD12F22A4EB7F000A0CFD3 /* ContentCell.swift in Sources */,
-				76E480B42A5292DC00C85FDD /* UIAction.swift in Sources */,
+				76E480B42A5292DC00C85FDD /* CommonUtils.swift in Sources */,
 				76CD12ED2A4EA85200A0CFD3 /* ProfileViewController.swift in Sources */,
 				76CD12CE2A4E9B2500A0CFD3 /* SceneDelegate.swift in Sources */,
+				76C898F32A53BA56000F75BF /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

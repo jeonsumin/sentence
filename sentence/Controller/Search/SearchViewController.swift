@@ -9,38 +9,26 @@ import UIKit
 import SnapKit
 
 class SearchViewController: UIViewController{
-     
+    
     let baseSearchView = BaseSearchView()
+    let codeSegmented = SearchSegmentedControl(frame: .zero, buttonTitle: ["문장","책"])
     
     let FavoriteSearchCellIdentifier: String = "FavoriteSearchCell"
-    private lazy var tableView: UITableView = {
+    public lazy var tableView: UITableView = {
         let tableView = UITableView()
         
         return tableView
     }()
-
+    
+    //    var controlDelegate: CustomSegmentedControlDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchController()
-        navigationTitleConfigure()
+        CommonUtils.navigationTitleConfigure(viewController: self, navigationTitle: "Discover")
         UIConfigure()
         setupTableViewSettings()
         
-    }
-    
-    func navigationTitleConfigure(){
-        
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Discover"
-        label.font = UIFont.systemFont(ofSize: 24,weight: .bold)
-        
-        label.textAlignment = .left
-        
-        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
-        titleView.backgroundColor = .clear
-        titleView.addSubview(label)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleView)
+        codeSegmented.delegate = self
     }
     
     func setupSearchController(){
@@ -57,23 +45,31 @@ class SearchViewController: UIViewController{
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(FavoriteSearchCell.self, forCellReuseIdentifier: FavoriteSearchCellIdentifier)
+        tableView.register(SearchResultCell.self, forCellReuseIdentifier: FavoriteSearchCellIdentifier)
+        tableView.isHidden = true
+        
+        tableView.separatorStyle = .none
     }
 }
 
 extension SearchViewController:UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteSearchCellIdentifier, for: indexPath)
-        if self.isFiltering {
-            cell.textLabel?.text = "\(indexPath.row)"
-        }else{
-            cell.textLabel?.text = "@@@"
-        }
+        cell.textLabel?.text = "@@@"
         
         return cell
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.isFiltering ? 0 : 3
+        switch codeSegmented.selectedIndex {
+        case 0 :
+            return self.isFiltering ? 0 : 3
+        case 1 :
+            return self.isFiltering ? 0 : 7
+        default:
+            return 10
+        }
+        
     }
 }
 
@@ -82,11 +78,18 @@ extension SearchViewController {
         view.backgroundColor = .systemBackground
         [
             tableView,
-            baseSearchView
+            baseSearchView,
+            codeSegmented
         ].forEach{
             view.addSubview($0)
         }
-        
+        //        CGRect(x: 0, y: 50, width: self.view.frame.width, height: 50)
+        codeSegmented.snp.makeConstraints{
+            $0.width.equalTo(view.frame.width)
+            $0.height.equalTo(50)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+        }
+        codeSegmented.isHidden = true
         tableView.snp.makeConstraints{
             $0.top.leading.trailing.bottom.equalTo(0)
         }
@@ -107,7 +110,12 @@ extension SearchViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         tableView.isHidden = !isFiltering
-        baseSearchView.isHidden = isFiltering
-        print(searchController.searchBar.text)
+        baseSearchView.isHidden = searchController.isActive
+        codeSegmented.isHidden = !searchController.isActive
+    }
+}
+
+extension SearchViewController: CustomSegmentedControlDelegate{
+    func change(to index: Int) {
     }
 }
