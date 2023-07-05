@@ -35,6 +35,15 @@ class HomeViewController: UITableViewController {
         return 380
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sentenceVC = SentenceViewController()
+        sentenceVC.modalTransitionStyle = .crossDissolve
+        sentenceVC.modalPresentationStyle = .overFullScreen
+        present(sentenceVC, animated: true)
+//        self.navigationController?.pushViewController(sentenceVC, animated: true)
+        
+    }
+    
 }
 
 extension HomeViewController: ContentCellDelegate {

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 import SnapKit
 
 class SentenceViewController: UIViewController {
@@ -178,18 +177,26 @@ class SentenceViewController: UIViewController {
     }
     
     //MARK: - Function
-    @objc func tappedBackButton(){}
+    @objc func tappedBackButton(){
+        self.dismiss(animated: true)
+        print("backButton")
+    }
     @objc func tappedheartButton(){
         isLike = !isLike
         isLike ? likeButton.setImage(UIImage(named: "heart_on"), for: .normal) : likeButton.setImage(UIImage(named: "heart"), for: .normal)
         
     }
-    @objc func tappedMoreButton(){}
-    @objc func tappedBookmarkButton(){}
+    @objc func tappedMoreButton(){
+        print("backButton")
+    }
+    @objc func tappedBookmarkButton(){
+        print("backButton")
+    }
 }
 
 extension SentenceViewController {
     func UIConfigure(){
+        view.backgroundColor = .systemBackground
         [
             bookSentenceView,
             headerView,
@@ -210,6 +217,7 @@ extension SentenceViewController {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             $0.leading.equalTo(view.snp.leading)
             $0.trailing.equalTo(view.snp.trailing)
+            $0.height.equalTo(30)
         }
         bookSentenceView.snp.makeConstraints{
             $0.top.equalTo(view.snp.top)
@@ -265,26 +273,7 @@ extension SentenceViewController {
             $0.top.equalTo(userThumnailImage.snp.bottom).offset(40)
             $0.leading.equalTo(view.snp.leading)
             $0.trailing.equalTo(view.snp.trailing)
-            $0.height.equalTo(187)
+            $0.height.equalTo(1)
         }
-    }
-}
-
-
-
-//MARK: - Preview
-struct SentenceViewController_Previews: PreviewProvider {
-    static var previews: some View {
-        SentenceViewControllerRepresentable().edgesIgnoringSafeArea(.all)
-    }
-}
-
-struct SentenceViewControllerRepresentable:UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> some UIViewController {
-        let homeViewController = SentenceViewController()
-        return UINavigationController(rootViewController: homeViewController)
-    }
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        typealias UIViewControllerType = UIViewController
     }
 }
