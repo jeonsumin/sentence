@@ -17,6 +17,7 @@ class HomeViewController: UITableViewController {
         let header = BannerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 150))
         
         tableView.tableHeaderView = header
+        tableView.separatorStyle = .none
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,7 +32,7 @@ class HomeViewController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+        return 380
     }
     
 }

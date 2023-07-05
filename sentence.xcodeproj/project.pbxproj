@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7696425C2A55077D0016140E /* UploadSentenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7696425B2A55077D0016140E /* UploadSentenceCell.swift */; };
+		7696425F2A551B500016140E /* SentenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7696425E2A551B500016140E /* SentenceViewController.swift */; };
+		769642622A55303C0016140E /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769642612A55303C0016140E /* CommentView.swift */; };
 		76C898F32A53BA56000F75BF /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C898F22A53BA56000F75BF /* UIColor+.swift */; };
 		76C898F52A53BC55000F75BF /* SearchSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C898F42A53BC55000F75BF /* SearchSegmentedControl.swift */; };
 		76C898F82A53EDE1000F75BF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C898F72A53EDE1000F75BF /* NotificationViewController.swift */; };
@@ -34,6 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7696425B2A55077D0016140E /* UploadSentenceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSentenceCell.swift; sourceTree = "<group>"; };
+		7696425E2A551B500016140E /* SentenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceViewController.swift; sourceTree = "<group>"; };
+		769642612A55303C0016140E /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		76C898F22A53BA56000F75BF /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		76C898F42A53BC55000F75BF /* SearchSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSegmentedControl.swift; sourceTree = "<group>"; };
 		76C898F72A53EDE1000F75BF /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +79,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7696425A2A5507560016140E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7696425B2A55077D0016140E /* UploadSentenceCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7696425D2A551B400016140E /* Sentence */ = {
+			isa = PBXGroup;
+			children = (
+				769642632A5530DB0016140E /* View */,
+				7696425E2A551B500016140E /* SentenceViewController.swift */,
+			);
+			path = Sentence;
+			sourceTree = "<group>";
+		};
+		769642602A5530250016140E /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				769642612A55303C0016140E /* CommentView.swift */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		769642632A5530DB0016140E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		76C898F62A53EDB7000F75BF /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +163,8 @@
 		76CD12E32A4EA77900A0CFD3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				769642602A5530250016140E /* Comment */,
+				7696425D2A551B400016140E /* Sentence */,
 				76C898F62A53EDB7000F75BF /* Notification */,
 				76CD12E72A4EA7FF00A0CFD3 /* Profile */,
 				76CD12E62A4EA7EA00A0CFD3 /* Active */,
@@ -166,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				76CD12EC2A4EA85200A0CFD3 /* ProfileViewController.swift */,
+				7696425A2A5507560016140E /* View */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -302,6 +343,7 @@
 				76CD12E02A4EA1EB00A0CFD3 /* BaseTabBarController.swift in Sources */,
 				76CD12F02A4EB13D00A0CFD3 /* UILabel.swift in Sources */,
 				76CD12D02A4E9B2500A0CFD3 /* HomeViewController.swift in Sources */,
+				7696425C2A55077D0016140E /* UploadSentenceCell.swift in Sources */,
 				76C898F82A53EDE1000F75BF /* NotificationViewController.swift in Sources */,
 				76C898F52A53BC55000F75BF /* SearchSegmentedControl.swift in Sources */,
 				76CD12CC2A4E9B2500A0CFD3 /* AppDelegate.swift in Sources */,
@@ -313,6 +355,8 @@
 				76CD12ED2A4EA85200A0CFD3 /* ProfileViewController.swift in Sources */,
 				76CD12CE2A4E9B2500A0CFD3 /* SceneDelegate.swift in Sources */,
 				76C898F32A53BA56000F75BF /* UIColor+.swift in Sources */,
+				7696425F2A551B500016140E /* SentenceViewController.swift in Sources */,
+				769642622A55303C0016140E /* CommentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +503,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J74H985T9L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = sentence/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -486,6 +531,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J74H985T9L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = sentence/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

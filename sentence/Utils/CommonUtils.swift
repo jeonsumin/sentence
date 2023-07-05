@@ -24,5 +24,11 @@ class CommonUtils {
         titleView.addSubview(label)
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleView)
     }
-
+    
+    static var dimmedView: UIView = {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = .systemGray5
+        
+        return view
+    }()
 }
