@@ -10,6 +10,10 @@
 		7696425C2A55077D0016140E /* UploadSentenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7696425B2A55077D0016140E /* UploadSentenceCell.swift */; };
 		7696425F2A551B500016140E /* SentenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7696425E2A551B500016140E /* SentenceViewController.swift */; };
 		769642622A55303C0016140E /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769642612A55303C0016140E /* CommentView.swift */; };
+		769642662A5657190016140E /* EditSentenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769642652A5657190016140E /* EditSentenceViewController.swift */; };
+		769642692A5699A20016140E /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769642682A5699A20016140E /* ColorPalette.swift */; };
+		76C19EB82A569D360013ABB1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C19EB72A569D360013ABB1 /* LoginViewController.swift */; };
+		76C19EBA2A56A20D0013ABB1 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C19EB92A56A20D0013ABB1 /* TermsViewController.swift */; };
 		76C898F32A53BA56000F75BF /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C898F22A53BA56000F75BF /* UIColor+.swift */; };
 		76C898F52A53BC55000F75BF /* SearchSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C898F42A53BC55000F75BF /* SearchSegmentedControl.swift */; };
 		76C898F82A53EDE1000F75BF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C898F72A53EDE1000F75BF /* NotificationViewController.swift */; };
@@ -40,6 +44,10 @@
 		7696425B2A55077D0016140E /* UploadSentenceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSentenceCell.swift; sourceTree = "<group>"; };
 		7696425E2A551B500016140E /* SentenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceViewController.swift; sourceTree = "<group>"; };
 		769642612A55303C0016140E /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
+		769642652A5657190016140E /* EditSentenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSentenceViewController.swift; sourceTree = "<group>"; };
+		769642682A5699A20016140E /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		76C19EB72A569D360013ABB1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		76C19EB92A56A20D0013ABB1 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		76C898F22A53BA56000F75BF /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		76C898F42A53BC55000F75BF /* SearchSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSegmentedControl.swift; sourceTree = "<group>"; };
 		76C898F72A53EDE1000F75BF /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +100,7 @@
 			children = (
 				769642632A5530DB0016140E /* View */,
 				7696425E2A551B500016140E /* SentenceViewController.swift */,
+				769642652A5657190016140E /* EditSentenceViewController.swift */,
 			);
 			path = Sentence;
 			sourceTree = "<group>";
@@ -109,6 +118,23 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		769642672A5699400016140E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				769642682A5699A20016140E /* ColorPalette.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		76C19EB52A569D2A0013ABB1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				76C19EB72A569D360013ABB1 /* LoginViewController.swift */,
+				76C19EB92A56A20D0013ABB1 /* TermsViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		76C898F62A53EDB7000F75BF /* Notification */ = {
@@ -152,6 +178,7 @@
 				76CD12E32A4EA77900A0CFD3 /* Controller */,
 				76E480B12A5290C100C85FDD /* Base */,
 				76E480B22A5292C700C85FDD /* Utils */,
+				769642672A5699400016140E /* Resource */,
 				76CD12D12A4E9B2500A0CFD3 /* Main.storyboard */,
 				76CD12D42A4E9B2700A0CFD3 /* Assets.xcassets */,
 				76CD12D62A4E9B2700A0CFD3 /* LaunchScreen.storyboard */,
@@ -163,6 +190,7 @@
 		76CD12E32A4EA77900A0CFD3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				76C19EB52A569D2A0013ABB1 /* Login */,
 				769642602A5530250016140E /* Comment */,
 				7696425D2A551B400016140E /* Sentence */,
 				76C898F62A53EDB7000F75BF /* Notification */,
@@ -336,13 +364,16 @@
 			files = (
 				76E480B72A5296CC00C85FDD /* PreviewController.swift in Sources */,
 				76CD12E92A4EA81300A0CFD3 /* SearchViewController.swift in Sources */,
+				769642662A5657190016140E /* EditSentenceViewController.swift in Sources */,
 				76E480BA2A52A98600C85FDD /* SearchResultCell.swift in Sources */,
+				76C19EBA2A56A20D0013ABB1 /* TermsViewController.swift in Sources */,
 				76CD12EB2A4EA83500A0CFD3 /* ActiveViewController.swift in Sources */,
 				76CD12F42A4EBDF400A0CFD3 /* BannerView.swift in Sources */,
 				76CD12F62A4EBF8F00A0CFD3 /* BaseView.swift in Sources */,
 				76CD12E02A4EA1EB00A0CFD3 /* BaseTabBarController.swift in Sources */,
 				76CD12F02A4EB13D00A0CFD3 /* UILabel.swift in Sources */,
 				76CD12D02A4E9B2500A0CFD3 /* HomeViewController.swift in Sources */,
+				769642692A5699A20016140E /* ColorPalette.swift in Sources */,
 				7696425C2A55077D0016140E /* UploadSentenceCell.swift in Sources */,
 				76C898F82A53EDE1000F75BF /* NotificationViewController.swift in Sources */,
 				76C898F52A53BC55000F75BF /* SearchSegmentedControl.swift in Sources */,
@@ -356,6 +387,7 @@
 				76CD12CE2A4E9B2500A0CFD3 /* SceneDelegate.swift in Sources */,
 				76C898F32A53BA56000F75BF /* UIColor+.swift in Sources */,
 				7696425F2A551B500016140E /* SentenceViewController.swift in Sources */,
+				76C19EB82A569D360013ABB1 /* LoginViewController.swift in Sources */,
 				769642622A55303C0016140E /* CommentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseTabBarController: UITabBarController {
+class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
     //MARK: - Properties
 //    private lazy var homeViewController: UIViewController = {
 //        let layout = UICollectionViewLayout()
@@ -40,13 +40,12 @@ class BaseTabBarController: UITabBarController {
     }()
     
     private lazy var createSentenceViewController: UIViewController = {
-        let viewController = sentence.ProfileViewController()
+        let viewController = EditSentenceViewController()
         let tabBarItem = UITabBarItem(title: nil,
                                       image: UIImage(named: "plus"),
                                       tag: 2)
         tabBarItem.selectedImage = UIImage(named: "plus_on")
         viewController.tabBarItem = tabBarItem
-        viewController.modalPresentationStyle = .fullScreen
         
         return viewController
     }()
@@ -85,6 +84,15 @@ class BaseTabBarController: UITabBarController {
             activeViewController,
             ProfileViewController
         ]
-        
+        self.delegate = self
+    }
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController.isKind(of: EditSentenceViewController.self) {
+          let vc =  EditSentenceViewController()
+         vc.modalPresentationStyle = .fullScreen
+         self.present(vc, animated: true, completion: nil)
+         return false
+      }
+      return true
     }
 }
