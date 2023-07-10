@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76450AAE2A5B987D00132C53 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76450AAD2A5B987D00132C53 /* StartViewController.swift */; };
 		7696425C2A55077D0016140E /* UploadSentenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7696425B2A55077D0016140E /* UploadSentenceCell.swift */; };
 		7696425F2A551B500016140E /* SentenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7696425E2A551B500016140E /* SentenceViewController.swift */; };
 		769642622A55303C0016140E /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769642612A55303C0016140E /* CommentView.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		76450AAD2A5B987D00132C53 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		7696425B2A55077D0016140E /* UploadSentenceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSentenceCell.swift; sourceTree = "<group>"; };
 		7696425E2A551B500016140E /* SentenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceViewController.swift; sourceTree = "<group>"; };
 		769642612A55303C0016140E /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				76C19EB72A569D360013ABB1 /* LoginViewController.swift */,
 				76C19EB92A56A20D0013ABB1 /* TermsViewController.swift */,
 				76C19EBC2A56AB8F0013ABB1 /* SetNameViewController.swift */,
+				76450AAD2A5B987D00132C53 /* StartViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 			files = (
 				76E480B72A5296CC00C85FDD /* PreviewController.swift in Sources */,
 				76CD12E92A4EA81300A0CFD3 /* SearchViewController.swift in Sources */,
+				76450AAE2A5B987D00132C53 /* StartViewController.swift in Sources */,
 				769642662A5657190016140E /* EditSentenceViewController.swift in Sources */,
 				76E480BA2A52A98600C85FDD /* SearchResultCell.swift in Sources */,
 				76C19EBA2A56A20D0013ABB1 /* TermsViewController.swift in Sources */,

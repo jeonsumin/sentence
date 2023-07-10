@@ -6,11 +6,11 @@
 //
 
 import UIKit
-import SwiftUI
-
+import SnapKit
 
 class LoginViewController: UIViewController {
-    
+
+    //MARK: - Properties
     lazy var subLogo: UILabel = {
         let label = UILabel()
         label.text = "읽고, 발견하고, 연결되는 소셜 독서 플랫폼"
@@ -33,6 +33,7 @@ class LoginViewController: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = .systemOrange
         button.layer.cornerRadius = 25
+        button.addTarget(self, action: #selector(tappedKakaoLoginButton), for: .touchUpInside)
         
         return button
     }()
@@ -41,6 +42,7 @@ class LoginViewController: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = .systemGreen
         button.layer.cornerRadius = 25
+        button.addTarget(self, action: #selector(tappedKakaoLoginButton), for: .touchUpInside)
         
         return button
     }()
@@ -49,6 +51,7 @@ class LoginViewController: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = .black
         button.layer.cornerRadius = 25
+        button.addTarget(self, action: #selector(tappedKakaoLoginButton), for: .touchUpInside)
         
         return button
     }()
@@ -80,12 +83,30 @@ class LoginViewController: UIViewController {
         
         return view
     }()
-    
+
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         UIConfigure()
     }
     
+    
+}
+
+//MARK: - Function
+extension LoginViewController {
+    @objc func tappedKakaoLoginButton(){
+        let nextVC = TermsViewController()
+        let navVC = UINavigationController(rootViewController: nextVC)
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    @objc func tappedNaverLoginButton(){}
+    @objc func tappedAppleLoginButton(){}
+}
+
+
+//MARK: - UIConfigure
+extension LoginViewController {
     func UIConfigure(){
         view.backgroundColor = .systemBackground
         
@@ -115,21 +136,5 @@ class LoginViewController: UIViewController {
             $0.bottom.equalTo(LoginStackView.snp.top).offset(-20)
             $0.centerX.equalTo(view)
         }
-    }
-}
-
-//MARK: - Preview
-struct LoginViewControllerController_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginViewControllerRepresentable().edgesIgnoringSafeArea(.all)
-    }
-}
-struct LoginViewControllerRepresentable:UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> some UIViewController {
-        let homeViewController = LoginViewController()
-        return UINavigationController(rootViewController: homeViewController)
-    }
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        typealias UIViewControllerType = UIViewController
     }
 }

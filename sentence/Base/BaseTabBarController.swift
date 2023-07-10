@@ -74,6 +74,11 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
     }()
     
     //MARK: - LifeCycle
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        validateAuth()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -86,6 +91,7 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
         ]
         self.delegate = self
     }
+    
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if viewController.isKind(of: EditSentenceViewController.self) {
           let vc =  EditSentenceViewController()
@@ -94,5 +100,12 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
          return false
       }
       return true
+    }
+    
+    private func validateAuth(){
+        let vc = LoginViewController()
+        let navVC = UINavigationController(rootViewController: vc)
+        navVC.modalPresentationStyle = .fullScreen
+        present(navVC, animated: false)
     }
 }

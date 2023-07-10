@@ -66,6 +66,7 @@ class LargeTitleLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         font = UIFont.boldSystemFont(ofSize: 20)
+        numberOfLines = 0
     }
     
     required init?(coder: NSCoder) {
