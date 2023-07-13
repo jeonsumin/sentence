@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import SwiftUI
 
 class TermsViewController: UIViewController {
 
@@ -97,10 +96,12 @@ class TermsViewController: UIViewController {
     var successButton: UIButton = {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = 16
-        button.layer.borderColor = CGColor.init(red: 225, green: 225, blue: 225, alpha: 1)
-        button.layer.borderWidth = 4
+        button.layer.borderColor = UIColor.systemGray5.cgColor
+        button.layer.borderWidth = 1
         button.titleLabel?.font = .boldSystemFont(ofSize: 14)
         button.tintColor = .systemGray5
+        button.isEnabled = false
+        button.backgroundColor = .white
 
         return button
     }()
@@ -114,60 +115,66 @@ class TermsViewController: UIViewController {
         return view
     }()
     
+    //MARK: - LifeCycle
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        successButton.addTarget(self, action: #selector(tappedNextTermButton), for: .touchUpInside)
-        
-        allAgreeButton.addTarget(self, action: #selector(tappedAllAgreeButton), for: .touchUpInside)
-        serviceTermsButton.addTarget(self, action: #selector(tappedServiceTermsButton), for: .touchUpInside)
-        MarketingTermsButton.addTarget(self, action: #selector(tappedMarketingTermsButton), for: .touchUpInside)
-        PersonalTermsButton.addTarget(self, action: #selector(tappedPersonalTermsButton), for: .touchUpInside)
         UIConfigure()
+        setupButtonAddTarget()
+        
     }
     
+    
+    //MARK: - Action Function
+    
+    //MARK: Tapped back Button Action
+    @objc func tappedBackbutton(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    //MARK: Tapped All Agree Button Action
     @objc func tappedAllAgreeButton(){
         isAllAgree = !isAllAgree
         
+        isAllAgree ? (successButton.isEnabled = true) : (successButton.isEnabled = false)
         isAllAgree ? allAgreeButton.setImage(UIImage(named: "checkBox_on"), for: .normal) : allAgreeButton.setImage(UIImage(named: "checkBox"), for: .normal)
+        isAllAgree ? (successButton.tintColor = .label) : (successButton.tintColor = .systemGray3)
+        isAllAgree ? (successButton.layer.borderColor = UIColor.label.cgColor) : (successButton.layer.borderColor = UIColor.systemGray5.cgColor)
         isAllAgree ? serviceTermsButton.setImage(UIImage(named: "checkBox_on"), for: .normal) : serviceTermsButton.setImage(UIImage(named: "checkBox"), for: .normal)
         isAllAgree ? PersonalTermsButton.setImage(UIImage(named: "checkBox_on"), for: .normal) : PersonalTermsButton.setImage(UIImage(named: "checkBox"), for: .normal)
         isAllAgree ? MarketingTermsButton.setImage(UIImage(named: "checkBox_on"), for: .normal) : MarketingTermsButton.setImage(UIImage(named: "checkBox"), for: .normal)
     }
     
+    //MARK: Tapped Service Terms Button Action
     @objc func tappedServiceTermsButton(){
         isServiceTerms = !isServiceTerms
-        isServiceTerms ? serviceTermsButton.setImage(UIImage(named: "checkBox_on"), for: .normal) : serviceTermsButton.setImage(UIImage(named: "checkBox"), for: .normal)
-        isServiceTerms && isPersonalTerms ? (successButton.tintColor = .label) : (successButton.tintColor = .systemGray3)
-        if (isAllAgree) {
-            isAllAgree = !isAllAgree
-            isAllAgree ? allAgreeButton.setImage(UIImage(named: "checkBox_on"), for: .normal) : allAgreeButton.setImage(UIImage(named: "checkBox"), for: .normal)
-        }
+        
+        setupTermsButtonConfigure(toggle: isServiceTerms, TermsButton: serviceTermsButton)
+        setupSuccessUIConfigure()
+        
 
     }
+    
+    //MARK: Tapped Personal Termas Button
     @objc func tappedPersonalTermsButton(){
         isPersonalTerms = !isPersonalTerms
-        isPersonalTerms ? PersonalTermsButton.setImage(UIImage(named: "checkBox_on"), for: .normal) : PersonalTermsButton.setImage(UIImage(named: "checkBox"), for: .normal)
-        isServiceTerms && isPersonalTerms ? (successButton.tintColor = .label) : (successButton.tintColor = .systemGray3)
-        if (isAllAgree) {
-            isAllAgree = !isAllAgree
-            isAllAgree ? allAgreeButton.setImage(UIImage(named: "checkBox_on"), for: .normal) : allAgreeButton.setImage(UIImage(named: "checkBox"), for: .normal)
-        }
-    }
-    @objc func tappedMarketingTermsButton(){
-        isMarketing = !isMarketing
-        isMarketing ? MarketingTermsButton.setImage(UIImage(named: "checkBox_on"), for: .normal) : MarketingTermsButton.setImage(UIImage(named: "checkBox"), for: .normal)
-        if (isAllAgree) {
-            isAllAgree = !isAllAgree
-            isAllAgree ? allAgreeButton.setImage(UIImage(named: "checkBox_on"), for: .normal) : allAgreeButton.setImage(UIImage(named: "checkBox"), for: .normal)
-        }
+        
+        setupTermsButtonConfigure(toggle: isPersonalTerms, TermsButton: PersonalTermsButton)
+        setupSuccessUIConfigure()
     }
     
+    //MARK: Tapped marketing Terms Button
+    @objc func tappedMarketingTermsButton(){
+        isMarketing = !isMarketing
+        
+        setupTermsButtonConfigure(toggle: isMarketing, TermsButton: MarketingTermsButton)
+    }
+    
+    //MARK: Tapped Next Terms Button
     @objc func tappedNextTermButton(){
-        isServiceTerms && isPersonalTerms ? (successButton.isEnabled = true) : (successButton.isEnabled = false)
         if successButton.isEnabled {
             let nextVC = SetNameViewController()
             self.navigationController?.pushViewController(nextVC, animated: true)
@@ -175,9 +182,44 @@ class TermsViewController: UIViewController {
         
     }
     
+    //MARK: 다음 버튼 UI
+    private func setupSuccessUIConfigure(){
+        isServiceTerms && isPersonalTerms ? (successButton.isEnabled = true) : (successButton.isEnabled = false)
+        isServiceTerms && isPersonalTerms ? (successButton.tintColor = .label) : (successButton.tintColor = .systemGray3)
+        isServiceTerms && isPersonalTerms ? (successButton.layer.borderColor = UIColor.label.cgColor) : (successButton.layer.borderColor = UIColor.systemGray5.cgColor)
+        
+        if (isAllAgree) {
+            isAllAgree = !isAllAgree
+            isAllAgree ? allAgreeButton.setImage(UIImage(named: "checkBox_on"), for: .normal) : allAgreeButton.setImage(UIImage(named: "checkBox"), for: .normal)
+        }
+    }
+    
+    //MARK: 토글 버튼 메소드
+    private func setupTermsButtonConfigure(toggle: Bool, TermsButton: UIButton ){
+        toggle ? TermsButton.setImage(UIImage(named: "checkBox_on"), for: .normal) : TermsButton.setImage(UIImage(named: "checkBox"), for: .normal)
+        if (isAllAgree) {
+            isAllAgree = !isAllAgree
+            isAllAgree ? allAgreeButton.setImage(UIImage(named: "checkBox_on"), for: .normal) : allAgreeButton.setImage(UIImage(named: "checkBox"), for: .normal)
+        }
+    }
+    
+    
+    //MARK: 버튼 클릭 이벤트 추가
+    private func setupButtonAddTarget(){
+        
+        successButton.addTarget(self, action: #selector(tappedNextTermButton), for: .touchUpInside)
+        
+        allAgreeButton.addTarget(self, action: #selector(tappedAllAgreeButton), for: .touchUpInside)
+        serviceTermsButton.addTarget(self, action: #selector(tappedServiceTermsButton), for: .touchUpInside)
+        MarketingTermsButton.addTarget(self, action: #selector(tappedMarketingTermsButton), for: .touchUpInside)
+        PersonalTermsButton.addTarget(self, action: #selector(tappedPersonalTermsButton), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(tappedBackbutton), for: .touchUpInside)
+    }
     
 }
 
+
+//MARK: - UI Configure 
 extension TermsViewController {
     func UIConfigure() {
         view.backgroundColor = .systemBackground
@@ -258,24 +300,8 @@ extension TermsViewController {
         successButton.snp.makeConstraints{
             $0.centerX.equalTo(view)
             $0.bottom.equalTo(view).offset(-30)
-            $0.leading.equalTo(view).offset(20)
-            $0.trailing.equalTo(view).offset(-20)
+            $0.leading.trailing.equalTo(view).inset(20)
             $0.height.equalTo(66)
         }
-    }
-}
-//MARK: - Preview
-struct TermsViewControllerController_Previews: PreviewProvider {
-    static var previews: some View {
-        TermsViewControllerRepresentable().edgesIgnoringSafeArea(.all)
-    }
-}
-struct TermsViewControllerRepresentable:UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> some UIViewController {
-        let homeViewController = TermsViewController()
-        return UINavigationController(rootViewController: homeViewController)
-    }
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        typealias UIViewControllerType = UIViewController
     }
 }

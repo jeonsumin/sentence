@@ -13,6 +13,7 @@
 		769642622A55303C0016140E /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769642612A55303C0016140E /* CommentView.swift */; };
 		769642662A5657190016140E /* EditSentenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769642652A5657190016140E /* EditSentenceViewController.swift */; };
 		769642692A5699A20016140E /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769642682A5699A20016140E /* ColorPalette.swift */; };
+		76A4E3A62A5FEE2E00033233 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4E3A52A5FEE2E00033233 /* UITextField+.swift */; };
 		76C19EB82A569D360013ABB1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C19EB72A569D360013ABB1 /* LoginViewController.swift */; };
 		76C19EBA2A56A20D0013ABB1 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C19EB92A56A20D0013ABB1 /* TermsViewController.swift */; };
 		76C19EBD2A56AB8F0013ABB1 /* SetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C19EBC2A56AB8F0013ABB1 /* SetNameViewController.swift */; };
@@ -49,6 +50,7 @@
 		769642612A55303C0016140E /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		769642652A5657190016140E /* EditSentenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSentenceViewController.swift; sourceTree = "<group>"; };
 		769642682A5699A20016140E /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		76A4E3A52A5FEE2E00033233 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		76C19EB72A569D360013ABB1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		76C19EB92A56A20D0013ABB1 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		76C19EBC2A56AB8F0013ABB1 /* SetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				76C898F22A53BA56000F75BF /* UIColor+.swift */,
+				76A4E3A52A5FEE2E00033233 /* UITextField+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				76CD12F62A4EBF8F00A0CFD3 /* BaseView.swift in Sources */,
 				76CD12E02A4EA1EB00A0CFD3 /* BaseTabBarController.swift in Sources */,
 				76CD12F02A4EB13D00A0CFD3 /* LabelComponent.swift in Sources */,
+				76A4E3A62A5FEE2E00033233 /* UITextField+.swift in Sources */,
 				76CD12D02A4E9B2500A0CFD3 /* HomeViewController.swift in Sources */,
 				769642692A5699A20016140E /* ColorPalette.swift in Sources */,
 				7696425C2A55077D0016140E /* UploadSentenceCell.swift in Sources */,

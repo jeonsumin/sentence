@@ -13,7 +13,6 @@ class SetNameViewController:UIViewController {
     lazy var backButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "back_arrow"), for: .normal)
-        button.backgroundColor = .blue
         return button
     }()
  
@@ -23,6 +22,7 @@ class SetNameViewController:UIViewController {
     var textField: UITextField = {
         let field = UITextField(frame: .zero)
         field.placeholder = "이름을 입력해 주세요"
+        field.addLeftPadding()
         field.backgroundColor = .systemGray6
         field.layer.cornerRadius = 16
 
@@ -32,10 +32,11 @@ class SetNameViewController:UIViewController {
     var successButton: UIButton = {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = 16
-        button.layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+        button.layer.borderColor = UIColor.systemGray5.cgColor
         button.layer.borderWidth = 1
         button.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        button.tintColor = .label
+        button.tintColor = .systemGray5
+        button.isEnabled = false
 
         return button
     }()

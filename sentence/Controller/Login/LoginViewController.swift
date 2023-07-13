@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
     
     lazy var kakaoLoginButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = .systemOrange
+        button.setImage(UIImage(named: "kakao_login"), for: .normal)
         button.layer.cornerRadius = 25
         button.addTarget(self, action: #selector(tappedKakaoLoginButton), for: .touchUpInside)
         
@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
     
     lazy var naverLoginButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = .systemGreen
+        button.setImage(UIImage(named: "naver_login"), for: .normal)
         button.layer.cornerRadius = 25
         button.addTarget(self, action: #selector(tappedKakaoLoginButton), for: .touchUpInside)
         
@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
     
     lazy var appleLoginButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = .black
+        button.setImage(UIImage(named: "apple_login"), for: .normal)
         button.layer.cornerRadius = 25
         button.addTarget(self, action: #selector(tappedKakaoLoginButton), for: .touchUpInside)
         
