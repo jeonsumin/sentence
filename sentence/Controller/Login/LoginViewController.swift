@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 import NaverThirdPartyLogin
 import Alamofire
+import KakaoSDKAuth
+import KakaoSDKUser
 
 class LoginViewController: UIViewController {
 
@@ -101,7 +103,42 @@ class LoginViewController: UIViewController {
 //MARK: - Function
 extension LoginViewController {
     @objc func tappedKakaoLoginButton(){
-        
+        if UserApi.isKakaoTalkLoginAvailable() {
+            UserApi.shared.loginWithKakaoTalk { token, error in
+                if let error = error {
+                    print("kakao login error " ,error )
+                } else {
+                  print("kakao login sucess")
+                    _ = token
+                    self.kakaoSetUserInfo()
+                }
+            }
+        } else {
+            UserApi.shared.loginWithKakaoAccount { token, error in
+                if let error = error {
+                    print("kakao login error ", error )
+                } else {
+                    print("kakao login Success")
+                    _ = token
+                    self.kakaoSetUserInfo()
+                }
+            }
+        }
+    }
+    
+    func kakaoSetUserInfo(){
+        UserApi.shared.me { user, error in
+            if let error = error {
+                print(error)
+            }else{
+                print("me success")
+                _ = user
+                print("nickname : \(user?.kakaoAccount?.profile?.nickname ?? "no nickname")")
+            }
+        }
+    }
+    
+    @objc func tappedNaverLoginButton(){
         naverLoginInstance?.delegate = self
         naverLoginInstance?.requestThirdPartyLogin()
         
@@ -110,9 +147,6 @@ extension LoginViewController {
         let nextVC = TermsViewController()
         let navVC = UINavigationController(rootViewController: nextVC)
         self.navigationController?.pushViewController(nextVC, animated: true)
-    }
-    @objc func tappedNaverLoginButton(){
-        
     }
     @objc func tappedAppleLoginButton(){}
 }

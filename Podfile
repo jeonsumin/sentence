@@ -11,7 +11,12 @@ pod 'SnapKit', '~> 5.0.0'
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'FirebaseStorage'
+
 pod 'naveridlogin-sdk-ios'
+
 pod 'Alamofire'
 
+pod 'KakaoSDKCommon', '2.11.3'
+pod 'KakaoSDKAuth', '2.11.3'
+pod 'KakaoSDKUser', '2.11.3'
 end
