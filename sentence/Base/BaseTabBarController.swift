@@ -103,9 +103,13 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     private func validateAuth(){
-        let vc = LoginViewController()
-        let navVC = UINavigationController(rootViewController: vc)
-        navVC.modalPresentationStyle = .fullScreen
-        present(navVC, animated: false)
+        let loginToken = UserDefaults.standard.object(forKey: "snsLoginToken")
+        if loginToken == nil {
+            let vc = LoginViewController()
+            let navVC = UINavigationController(rootViewController: vc)
+            navVC.modalPresentationStyle = .fullScreen
+            present(navVC, animated: false)
+        }
+        
     }
 }
