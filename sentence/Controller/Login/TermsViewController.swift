@@ -2,7 +2,7 @@
 //  TermsViewController.swift
 //  sentence
 //
-//  Created by deepvisions on 2023/07/06.
+//  Created by terry on 2023/07/06.
 //
 
 import UIKit
@@ -253,6 +253,8 @@ extension TermsViewController {
         }
         
         allAgreeLabel.text = "약관 전체동의"
+        let allAgrreGuesture = UITapGestureRecognizer(target: self, action: #selector(tappedAllAgreeButton))
+        allAgreeLabel.addGestureRecognizer(allAgrreGuesture)
         [allAgreeButton,allAgreeLabel,].forEach{
             AllAgreeStackView.addArrangedSubview($0)
         }
@@ -270,6 +272,8 @@ extension TermsViewController {
         }
         
         serviceTerms.text = "(필수) 서비스 이용약관"
+        let serviceGuesture = UITapGestureRecognizer(target: self, action: #selector(tappedServiceTermsButton))
+        serviceTerms.addGestureRecognizer(serviceGuesture)
         [serviceTermsButton,serviceTerms].forEach{
             serviceTermsStackView.addArrangedSubview($0)
         }
@@ -279,6 +283,8 @@ extension TermsViewController {
         }
         
         PersonalTerms.text = "(필수) 개인정보 처리방침"
+        let personalGuesture = UITapGestureRecognizer(target: self, action: #selector(tappedPersonalTermsButton))
+        PersonalTerms.addGestureRecognizer(personalGuesture)
         [PersonalTermsButton,PersonalTerms].forEach{
             personalTermsStackView.addArrangedSubview($0)
         }
@@ -288,6 +294,8 @@ extension TermsViewController {
         }
         
         MarketingTerms.text = "(선택) 마케팅정보 수신동의"
+        let marketingGuesture = UITapGestureRecognizer(target: self, action: #selector(tappedMarketingTermsButton))
+        MarketingTerms.addGestureRecognizer(marketingGuesture)
         [MarketingTermsButton,MarketingTerms].forEach{
             marketingTermsStackView.addArrangedSubview($0)
         }

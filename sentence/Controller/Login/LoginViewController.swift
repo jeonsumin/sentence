@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  sentence
 //
-//  Created by deepvisions on 2023/07/06.
+//  Created by terry on 2023/07/06.
 //
 
 import UIKit
@@ -111,6 +111,7 @@ extension LoginViewController {
                   print("kakao login sucess")
                     _ = token
                     self.kakaoSetUserInfo()
+                    self.nextPageToPushController()
                 }
             }
         } else {
@@ -118,9 +119,9 @@ extension LoginViewController {
                 if let error = error {
                     print("kakao login error ", error )
                 } else {
-                    print("kakao login Success")
                     _ = token
                     self.kakaoSetUserInfo()
+                    self.nextPageToPushController()
                 }
             }
         }
@@ -141,14 +142,26 @@ extension LoginViewController {
     @objc func tappedNaverLoginButton(){
         naverLoginInstance?.delegate = self
         naverLoginInstance?.requestThirdPartyLogin()
+        getNaverLoginInfo()
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(naverLoginInstance?.accessToken, forKey: "naverLoginToken")
         
-        UserDefaults.standard.set(naverLoginInstance?.accessToken, forKey: "snsLoginToken")
         
+        if (userDefaults.string(forKey: "naverLoginToken") != nil){
+            self.nextPageToPushController()
+        }
+        
+    }
+    
+    @objc func tappedAppleLoginButton(){
+        self.nextPageToPushController()
+    }
+    
+    func nextPageToPushController(){
         let nextVC = TermsViewController()
         let navVC = UINavigationController(rootViewController: nextVC)
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-    @objc func tappedAppleLoginButton(){}
 }
 
 
@@ -192,6 +205,7 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
     func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
         print("Success Login")
         getNaverLoginInfo()
+        self.nextPageToPushController()
     }
     
     // refresh token

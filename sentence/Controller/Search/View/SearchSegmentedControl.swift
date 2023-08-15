@@ -2,7 +2,7 @@
 //  SearchSegmentedControl.swift
 //  sentence
 //
-//  Created by deepvisions on 2023/07/04.
+//  Created by terry on 2023/07/04.
 //
 
 import UIKit

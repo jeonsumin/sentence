@@ -2,7 +2,7 @@
 //  StartViewController.swift
 //  sentence
 //
-//  Created by deepvisions on 2023/07/10.
+//  Created by terry on 2023/07/10.
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  ColorPalette.swift
 //  sentence
 //
-//  Created by deepvisions on 2023/07/06.
+//  Created by terry on 2023/07/06.
 //
 
 import Foundation

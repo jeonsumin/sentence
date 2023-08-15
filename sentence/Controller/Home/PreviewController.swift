@@ -2,7 +2,7 @@
 //  PreviewController.swift
 //  sentence
 //
-//  Created by deepvisions on 2023/07/03.
+//  Created by terry on 2023/07/03.
 //
 
 import UIKit

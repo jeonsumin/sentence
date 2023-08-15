@@ -2,7 +2,7 @@
 //  SetNameViewController.swift
 //  sentence
 //
-//  Created by deepvisions on 2023/07/06.
+//  Created by terry on 2023/07/06.
 //
 
 import UIKit
@@ -71,7 +71,19 @@ extension SetNameViewController {
 }
 
 extension SetNameViewController: UITextFieldDelegate {
-    
+
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+//        print("change : \(textField.text?.count)")
+        if textField.text!.count > 2 {
+            successButton.isEnabled = true
+            successButton.tintColor = .label
+            successButton.layer.borderColor = UIColor.label.cgColor
+        }else{
+            successButton.isEnabled = false
+            successButton.tintColor = .systemGray5
+            successButton.layer.borderColor = UIColor.systemGray5.cgColor
+        }
+    }
 }
 
 extension SetNameViewController {

@@ -2,7 +2,7 @@
 //  UILabel.swift
 //  sentence
 //
-//  Created by deepvisions on 2023/06/30.
+//  Created by terry on 2023/06/30.
 //
 
 import UIKit
@@ -56,6 +56,7 @@ class TitleLabel: UILabel {
         super.init(frame: frame)
         font = UIFont.boldSystemFont(ofSize: 16)
         numberOfLines = 0
+        isUserInteractionEnabled = true
     }
     
     required init?(coder: NSCoder) {

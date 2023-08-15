@@ -103,7 +103,7 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     private func validateAuth(){
-        let loginToken = UserDefaults.standard.object(forKey: "snsLoginToken")
+        let loginToken = UserDefaults.standard.string(forKey: "naverLoginToken")
         if loginToken == nil {
             let vc = LoginViewController()
             let navVC = UINavigationController(rootViewController: vc)

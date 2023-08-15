@@ -2,7 +2,7 @@
 //  UploadSentenceCell.swift
 //  sentence
 //
-//  Created by deepvisions on 2023/07/05.
+//  Created by terry on 2023/07/05.
 //
 
 import UIKit
