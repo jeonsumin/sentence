@@ -43,6 +43,14 @@
 		76EED82E2A735871005D5E4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76EED82D2A735871005D5E4A /* GoogleService-Info.plist */; };
 		76EED8312A738243005D5E4A /* NaverLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EED8302A738243005D5E4A /* NaverLoginManager.swift */; };
 		A8B2A1CE7652C8F7C68F4B9F /* Pods_sentence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9B50DE77A8AC852FD12703 /* Pods_sentence.framework */; };
+		DE154C662A8CC68000242F4C /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE154C652A8CC68000242F4C /* Content.swift */; };
+		DE154C682A8CD7E600242F4C /* SelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE154C672A8CD7E600242F4C /* SelectedViewController.swift */; };
+		DE154C6A2A8CD81000242F4C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE154C692A8CD81000242F4C /* BaseViewController.swift */; };
+		DE154C6C2A8CD9D100242F4C /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE154C6B2A8CD9D100242F4C /* ButtonComponent.swift */; };
+		DE154C6F2A8CE05000242F4C /* SelectedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE154C6E2A8CE05000242F4C /* SelectedViewCell.swift */; };
+		DECE1D672A8BC6C80043D323 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECE1D662A8BC6C80043D323 /* FirebaseManager.swift */; };
+		DEE52FB52A8CC17A00EC11E4 /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE52FB42A8CC17A00EC11E4 /* AlamofireManager.swift */; };
+		DEE52FB82A8CC1DA00EC11E4 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE52FB72A8CC1DA00EC11E4 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +94,14 @@
 		76EED82D2A735871005D5E4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		76EED8302A738243005D5E4A /* NaverLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverLoginManager.swift; sourceTree = "<group>"; };
 		B998897B44C0F4A401296BA3 /* Pods-sentence.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sentence.debug.xcconfig"; path = "Target Support Files/Pods-sentence/Pods-sentence.debug.xcconfig"; sourceTree = "<group>"; };
+		DE154C652A8CC68000242F4C /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		DE154C672A8CD7E600242F4C /* SelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedViewController.swift; sourceTree = "<group>"; };
+		DE154C692A8CD81000242F4C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DE154C6B2A8CD9D100242F4C /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
+		DE154C6E2A8CE05000242F4C /* SelectedViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedViewCell.swift; sourceTree = "<group>"; };
+		DECE1D662A8BC6C80043D323 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		DEE52FB42A8CC17A00EC11E4 /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
+		DEE52FB72A8CC1DA00EC11E4 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +135,10 @@
 		7696425D2A551B400016140E /* Sentence */ = {
 			isa = PBXGroup;
 			children = (
-				769642632A5530DB0016140E /* View */,
+				DE154C6D2A8CE04400242F4C /* View */,
 				7696425E2A551B500016140E /* SentenceViewController.swift */,
 				769642652A5657190016140E /* EditSentenceViewController.swift */,
+				DE154C672A8CD7E600242F4C /* SelectedViewController.swift */,
 			);
 			path = Sentence;
 			sourceTree = "<group>";
@@ -134,17 +151,13 @@
 			path = Comment;
 			sourceTree = "<group>";
 		};
-		769642632A5530DB0016140E /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		769642672A5699400016140E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				76CD12CB2A4E9B2500A0CFD3 /* AppDelegate.swift */,
+				76CD12CD2A4E9B2500A0CFD3 /* SceneDelegate.swift */,
 				769642682A5699A20016140E /* ColorPalette.swift */,
+				DE154C652A8CC68000242F4C /* Content.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -164,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				76CD12EF2A4EB13D00A0CFD3 /* LabelComponent.swift */,
+				DE154C6B2A8CD9D100242F4C /* ButtonComponent.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -205,10 +219,9 @@
 		76CD12CA2A4E9B2500A0CFD3 /* sentence */ = {
 			isa = PBXGroup;
 			children = (
-				76EED82F2A73821C005D5E4A /* ThirdParty */,
 				76EED82D2A735871005D5E4A /* GoogleService-Info.plist */,
-				76CD12CB2A4E9B2500A0CFD3 /* AppDelegate.swift */,
-				76CD12CD2A4E9B2500A0CFD3 /* SceneDelegate.swift */,
+				76EED82F2A73821C005D5E4A /* ThirdParty */,
+				DEE52FB62A8CC19700EC11E4 /* Model */,
 				76C19EBB2A56A5850013ABB1 /* Component */,
 				76CD12EE2A4EB13000A0CFD3 /* Extension */,
 				76CD12E32A4EA77900A0CFD3 /* Controller */,
@@ -289,6 +302,7 @@
 			children = (
 				76CD12DF2A4EA1EB00A0CFD3 /* BaseTabBarController.swift */,
 				76CD12F52A4EBF8F00A0CFD3 /* BaseView.swift */,
+				DE154C692A8CD81000242F4C /* BaseViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -325,6 +339,8 @@
 			isa = PBXGroup;
 			children = (
 				76EED8302A738243005D5E4A /* NaverLoginManager.swift */,
+				DECE1D662A8BC6C80043D323 /* FirebaseManager.swift */,
+				DEE52FB42A8CC17A00EC11E4 /* AlamofireManager.swift */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -336,6 +352,22 @@
 				030812147D3E7AB42C7CC8FB /* Pods-sentence.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DE154C6D2A8CE04400242F4C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DE154C6E2A8CE05000242F4C /* SelectedViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DEE52FB62A8CC19700EC11E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DEE52FB72A8CC1DA00EC11E4 /* Book.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,24 +488,32 @@
 			files = (
 				76E480B72A5296CC00C85FDD /* PreviewController.swift in Sources */,
 				76CD12E92A4EA81300A0CFD3 /* SearchViewController.swift in Sources */,
+				DE154C6F2A8CE05000242F4C /* SelectedViewCell.swift in Sources */,
 				76450AAE2A5B987D00132C53 /* StartViewController.swift in Sources */,
 				769642662A5657190016140E /* EditSentenceViewController.swift in Sources */,
 				76E480BA2A52A98600C85FDD /* SearchResultCell.swift in Sources */,
 				76EED8312A738243005D5E4A /* NaverLoginManager.swift in Sources */,
 				76C19EBA2A56A20D0013ABB1 /* TermsViewController.swift in Sources */,
+				DE154C682A8CD7E600242F4C /* SelectedViewController.swift in Sources */,
 				76CD12EB2A4EA83500A0CFD3 /* ActiveViewController.swift in Sources */,
 				76CD12F42A4EBDF400A0CFD3 /* BannerView.swift in Sources */,
 				76CD12F62A4EBF8F00A0CFD3 /* BaseView.swift in Sources */,
+				DE154C6A2A8CD81000242F4C /* BaseViewController.swift in Sources */,
 				76CD12E02A4EA1EB00A0CFD3 /* BaseTabBarController.swift in Sources */,
 				76CD12F02A4EB13D00A0CFD3 /* LabelComponent.swift in Sources */,
+				DECE1D672A8BC6C80043D323 /* FirebaseManager.swift in Sources */,
 				76A4E3A62A5FEE2E00033233 /* UITextField+.swift in Sources */,
 				76CD12D02A4E9B2500A0CFD3 /* HomeViewController.swift in Sources */,
 				769642692A5699A20016140E /* ColorPalette.swift in Sources */,
+				DEE52FB82A8CC1DA00EC11E4 /* Book.swift in Sources */,
 				7696425C2A55077D0016140E /* UploadSentenceCell.swift in Sources */,
 				76C898F82A53EDE1000F75BF /* NotificationViewController.swift in Sources */,
 				76C898F52A53BC55000F75BF /* SearchSegmentedControl.swift in Sources */,
+				DEE52FB52A8CC17A00EC11E4 /* AlamofireManager.swift in Sources */,
 				76CD12CC2A4E9B2500A0CFD3 /* AppDelegate.swift in Sources */,
 				76E480BE2A52B56400C85FDD /* BaseSearchView.swift in Sources */,
+				DE154C6C2A8CD9D100242F4C /* ButtonComponent.swift in Sources */,
+				DE154C662A8CC68000242F4C /* Content.swift in Sources */,
 				76E480C22A53AE6F00C85FDD /* PopularWordCell.swift in Sources */,
 				76C898FB2A53F6CF000F75BF /* ActiveTableViewCell.swift in Sources */,
 				76CD12F22A4EB7F000A0CFD3 /* ContentCell.swift in Sources */,

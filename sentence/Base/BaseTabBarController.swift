@@ -104,6 +104,7 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     private func validateAuth(){
         let loginToken = UserDefaults.standard.string(forKey: "naverLoginToken")
+        print("naver Login Token ::: \(loginToken)")
         if loginToken == nil {
             let vc = LoginViewController()
             let navVC = UINavigationController(rootViewController: vc)

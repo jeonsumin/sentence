@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 import SnapKit
 
 class EditSentenceViewController: UIViewController{
@@ -69,7 +68,7 @@ class EditSentenceViewController: UIViewController{
         return view
     }()
     
-    private lazy var selectedBook: UIButton = {
+    public lazy var selectedBook: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .systemGray5
         button.setTitle("책을 선택해 주세요", for: .normal)
@@ -78,6 +77,7 @@ class EditSentenceViewController: UIViewController{
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         button.titleLabel?.font = .systemFont(ofSize: 16,weight: .light)
         button.layer.cornerRadius = 8
+        button.addTarget(self, action: #selector(tappedSelectedBook), for: .touchUpInside)
         return button
     }()
     
@@ -167,10 +167,15 @@ class EditSentenceViewController: UIViewController{
     @objc func tappedChangeBackGroundColorButton() {
         print("tapped ChangeBackGroundColor Button")
     }
+    @objc func tappedSelectedBook(){
+        let vc = SelectedViewController()
+        let navVC = UINavigationController(rootViewController: vc)
+        navVC.modalPresentationStyle = .automatic
+        present(navVC, animated: true)
+    }
     
     private func updateCountLabel(characterCount: Int){
         remainCountLabel.text = "\(characterCount)/400"
-        
     }
 }
 
@@ -233,21 +238,5 @@ extension EditSentenceViewController: UITextViewDelegate {
         updateCountLabel(characterCount: characterCount)
         
         return true
-    }
-}
-
-//MARK: - Preview
-struct EditSentenceViewController_Previews: PreviewProvider {
-    static var previews: some View {
-        EditSentenceViewControllerRepresentable().edgesIgnoringSafeArea(.all)
-    }
-}
-struct EditSentenceViewControllerRepresentable:UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> some UIViewController {
-        let homeViewController = EditSentenceViewController()
-        return UINavigationController(rootViewController: homeViewController)
-    }
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        typealias UIViewControllerType = UIViewController
     }
 }

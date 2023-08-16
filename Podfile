@@ -15,6 +15,7 @@ pod 'FirebaseStorage'
 pod 'naveridlogin-sdk-ios'
 
 pod 'Alamofire'
+pod 'Kingfisher'
 
 pod 'KakaoSDKCommon', '2.11.3'
 pod 'KakaoSDKAuth', '2.11.3'
