@@ -11,6 +11,7 @@ pod 'SnapKit', '~> 5.0.0'
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'FirebaseStorage'
+pod 'FirebaseDatabase'
 
 pod 'naveridlogin-sdk-ios'
 

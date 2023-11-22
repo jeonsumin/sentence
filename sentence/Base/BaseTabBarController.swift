@@ -63,7 +63,7 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
     }()
     
     private lazy var ProfileViewController: UIViewController = {
-        let viewController = sentence.ProfileViewController()
+        let viewController = UINavigationController(rootViewController: sentence.ProfileViewController())
         let tabBarItem = UITabBarItem(title: nil,
                                       image: UIImage(named: "profile"),
                                       tag: 4)
@@ -101,10 +101,11 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
       }
       return true
     }
-    
+
+    ///  로그인 유무 확인
     private func validateAuth(){
         let loginToken = UserDefaults.standard.string(forKey: "naverLoginToken")
-        print("naver Login Token ::: \(loginToken)")
+        
         if loginToken == nil {
             let vc = LoginViewController()
             let navVC = UINavigationController(rootViewController: vc)

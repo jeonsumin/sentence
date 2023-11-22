@@ -15,7 +15,6 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
     func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
         print("Success Login")
         getNaverLoginInfo()
-        self.nextPageToPushController()
     }
     
     // refresh token
@@ -59,7 +58,7 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
             guard let name = object["name"] as? String else { return }
             guard let email = object["email"] as? String else { return }
             guard let id = object["id"] as? String else { return }
-            
+
         }
     }
     

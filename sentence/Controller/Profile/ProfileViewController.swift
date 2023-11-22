@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import SwiftUI
 
 class ProfileViewController: UIViewController {
     
@@ -15,6 +14,7 @@ class ProfileViewController: UIViewController {
     private lazy var settingsButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "gear"), for: .normal)
+        button.addTarget(self, action: #selector(tappedSettingsButton), for: .touchUpInside)
         return button
     }()
     
@@ -254,6 +254,15 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout{
     }
 }
 
+//MARK: - Target Function
+extension ProfileViewController {
+    @objc private func tappedSettingsButton(){
+        let vc = ProfileConfigureViewController()
+
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
 //MARK: - UI Confige
 extension ProfileViewController {
     func UIConfigure(){
@@ -317,21 +326,4 @@ extension ProfileViewController {
         }
     }
     
-}
-
-//MARK: - Preview
-struct ProfileViewController_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileViewControllerRepresentable().edgesIgnoringSafeArea(.all)
-    }
-}
-struct ProfileViewControllerRepresentable:UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> some UIViewController {
-        let layout = UICollectionViewLayout()
-        let homeViewController = ProfileViewController()
-        return UINavigationController(rootViewController: homeViewController)
-    }
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        typealias UIViewControllerType = UIViewController
-    }
 }

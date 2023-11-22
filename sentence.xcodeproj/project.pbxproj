@@ -48,6 +48,9 @@
 		DE154C6A2A8CD81000242F4C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE154C692A8CD81000242F4C /* BaseViewController.swift */; };
 		DE154C6C2A8CD9D100242F4C /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE154C6B2A8CD9D100242F4C /* ButtonComponent.swift */; };
 		DE154C6F2A8CE05000242F4C /* SelectedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE154C6E2A8CE05000242F4C /* SelectedViewCell.swift */; };
+		DE6CF15B2B0C45FE0081986B /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6CF15A2B0C45FE0081986B /* Register.swift */; };
+		DE6CF15D2B0C46540081986B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6CF15C2B0C46540081986B /* LoginViewModel.swift */; };
+		DEA1427C2B0C3CCF008EAEBD /* ProfileConfigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA1427B2B0C3CCF008EAEBD /* ProfileConfigureViewController.swift */; };
 		DECE1D672A8BC6C80043D323 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECE1D662A8BC6C80043D323 /* FirebaseManager.swift */; };
 		DEE52FB52A8CC17A00EC11E4 /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE52FB42A8CC17A00EC11E4 /* AlamofireManager.swift */; };
 		DEE52FB82A8CC1DA00EC11E4 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE52FB72A8CC1DA00EC11E4 /* Book.swift */; };
@@ -99,6 +102,9 @@
 		DE154C692A8CD81000242F4C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DE154C6B2A8CD9D100242F4C /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		DE154C6E2A8CE05000242F4C /* SelectedViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedViewCell.swift; sourceTree = "<group>"; };
+		DE6CF15A2B0C45FE0081986B /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		DE6CF15C2B0C46540081986B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		DEA1427B2B0C3CCF008EAEBD /* ProfileConfigureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfigureViewController.swift; sourceTree = "<group>"; };
 		DECE1D662A8BC6C80043D323 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DEE52FB42A8CC17A00EC11E4 /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
 		DEE52FB72A8CC1DA00EC11E4 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				76C19EB72A569D360013ABB1 /* LoginViewController.swift */,
+				DE6CF15C2B0C46540081986B /* LoginViewModel.swift */,
 				76C19EB92A56A20D0013ABB1 /* TermsViewController.swift */,
 				76C19EBC2A56AB8F0013ABB1 /* SetNameViewController.swift */,
 				76450AAD2A5B987D00132C53 /* StartViewController.swift */,
@@ -282,6 +289,7 @@
 		76CD12E72A4EA7FF00A0CFD3 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				DEA1427A2B0C3CB7008EAEBD /* ProfilConfigure */,
 				76CD12EC2A4EA85200A0CFD3 /* ProfileViewController.swift */,
 				7696425A2A5507560016140E /* View */,
 			);
@@ -362,10 +370,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		DEA1427A2B0C3CB7008EAEBD /* ProfilConfigure */ = {
+			isa = PBXGroup;
+			children = (
+				DEA1427B2B0C3CCF008EAEBD /* ProfileConfigureViewController.swift */,
+			);
+			path = ProfilConfigure;
+			sourceTree = "<group>";
+		};
 		DEE52FB62A8CC19700EC11E4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				DEE52FB72A8CC1DA00EC11E4 /* Book.swift */,
+				DE6CF15A2B0C45FE0081986B /* Register.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -506,6 +523,7 @@
 				76CD12D02A4E9B2500A0CFD3 /* HomeViewController.swift in Sources */,
 				769642692A5699A20016140E /* ColorPalette.swift in Sources */,
 				DEE52FB82A8CC1DA00EC11E4 /* Book.swift in Sources */,
+				DE6CF15D2B0C46540081986B /* LoginViewModel.swift in Sources */,
 				7696425C2A55077D0016140E /* UploadSentenceCell.swift in Sources */,
 				76C898F82A53EDE1000F75BF /* NotificationViewController.swift in Sources */,
 				76C898F52A53BC55000F75BF /* SearchSegmentedControl.swift in Sources */,
@@ -519,9 +537,11 @@
 				76CD12F22A4EB7F000A0CFD3 /* ContentCell.swift in Sources */,
 				76E480B42A5292DC00C85FDD /* CommonUtils.swift in Sources */,
 				76CD12ED2A4EA85200A0CFD3 /* ProfileViewController.swift in Sources */,
+				DEA1427C2B0C3CCF008EAEBD /* ProfileConfigureViewController.swift in Sources */,
 				76C19EBD2A56AB8F0013ABB1 /* SetNameViewController.swift in Sources */,
 				76CD12CE2A4E9B2500A0CFD3 /* SceneDelegate.swift in Sources */,
 				76C898F32A53BA56000F75BF /* UIColor+.swift in Sources */,
+				DE6CF15B2B0C45FE0081986B /* Register.swift in Sources */,
 				7696425F2A551B500016140E /* SentenceViewController.swift in Sources */,
 				76C19EB82A569D360013ABB1 /* LoginViewController.swift in Sources */,
 				769642622A55303C0016140E /* CommentView.swift in Sources */,

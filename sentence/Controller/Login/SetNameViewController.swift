@@ -80,8 +80,8 @@ extension SetNameViewController: UITextFieldDelegate {
             successButton.layer.borderColor = UIColor.label.cgColor
         }else{
             successButton.isEnabled = false
-            successButton.tintColor = .systemGray5
-            successButton.layer.borderColor = UIColor.systemGray5.cgColor
+            successButton.tintColor = .systemGray3
+            successButton.layer.borderColor = UIColor.systemGray3.cgColor
         }
     }
 }

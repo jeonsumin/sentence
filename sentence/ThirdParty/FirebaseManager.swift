@@ -6,4 +6,14 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseStorage
+import FirebaseDatabase
 
+class FirebaseManager {
+
+    static let shared = FirebaseManager()
+    var databaseRef = Database.database().reference()
+    var storage = Storage.storage().reference()
+
+}
