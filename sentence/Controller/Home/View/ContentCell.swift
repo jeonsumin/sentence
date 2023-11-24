@@ -130,6 +130,12 @@ class ContentCell: UITableViewCell {
     @objc func tappedMoreButton(){
         delegate.tappedMoreButton()
     }
+
+    func setData(_ data: Sentence){
+        self.sentenceLabel.text = data.sentence
+        self.sentenceDescriptionLabel.text = data.bookName
+        self.bookOwnerLabel.text = data.bookAuth
+    }
 }
 
 

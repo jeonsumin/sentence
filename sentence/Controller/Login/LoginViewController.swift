@@ -11,11 +11,12 @@ import NaverThirdPartyLogin
 import Alamofire
 import KakaoSDKAuth
 import KakaoSDKUser
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
     let naverLoginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
-    
+
     //MARK: - Properties
     lazy var subLogo: UILabel = {
         let label = UILabel()
@@ -103,28 +104,34 @@ class LoginViewController: UIViewController {
 //MARK: - Function
 extension LoginViewController {
     @objc func tappedKakaoLoginButton(){
-        if UserApi.isKakaoTalkLoginAvailable() {
-            UserApi.shared.loginWithKakaoTalk { token, error in
-                if let error = error {
-                    print("kakao login error " ,error )
-                } else {
-                  print("kakao login sucess")
-                    _ = token
-                    self.kakaoSetUserInfo()
-                    self.nextPageToPushController()
-                }
-            }
-        } else {
-            UserApi.shared.loginWithKakaoAccount { token, error in
-                if let error = error {
-                    print("kakao login error ", error )
-                } else {
-                    _ = token
-                    self.kakaoSetUserInfo()
-                    self.nextPageToPushController()
-                }
+
+        Auth.auth().signIn(withEmail: "soomin@naver.com", password: "123qweasd") { result, _ in
+            if result != nil {
+                self.nextPageToPushController()
             }
         }
+//        if UserApi.isKakaoTalkLoginAvailable() {
+//            UserApi.shared.loginWithKakaoTalk { token, error in
+//                if let error = error {
+//                    print("kakao login error " ,error )
+//                } else {
+//                  print("kakao login sucess")
+//                    _ = token
+//                    self.kakaoSetUserInfo()
+//                    self.nextPageToPushController(token: token)
+//                }
+//            }
+//        } else {
+//            UserApi.shared.loginWithKakaoAccount { token, error in
+//                if let error = error {
+//                    print("kakao login error ", error )
+//                } else {
+//                    _ = token
+//                    self.kakaoSetUserInfo()
+//                    self.nextPageToPushController(token: token)
+//                }
+//            }
+//        }
     }
     
     func kakaoSetUserInfo(){
@@ -144,10 +151,10 @@ extension LoginViewController {
         naverLoginInstance?.requestThirdPartyLogin()
         getNaverLoginInfo()
         let userDefaults = UserDefaults.standard
-        userDefaults.set(naverLoginInstance?.accessToken, forKey: "naverLoginToken")
-        
-        
-        if (userDefaults.string(forKey: "naverLoginToken") != nil){
+        userDefaults.set(naverLoginInstance?.accessToken, forKey: "loginToken")
+
+
+        if (userDefaults.string(forKey: "loginToken") != nil){
             self.nextPageToPushController()
         }
         
@@ -158,8 +165,7 @@ extension LoginViewController {
     }
     
     func nextPageToPushController(){
-        let nextVC = TermsViewController()
-        let navVC = UINavigationController(rootViewController: nextVC)
+        let nextVC = SetNameViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }

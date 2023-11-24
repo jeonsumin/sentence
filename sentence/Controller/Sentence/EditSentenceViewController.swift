@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class EditSentenceViewController: UIViewController{
 
@@ -93,7 +95,7 @@ class EditSentenceViewController: UIViewController{
         
         return txtView
     }()
-    
+
     private lazy var backgroundColorChangeButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .brown
@@ -123,7 +125,7 @@ class EditSentenceViewController: UIViewController{
         view.backgroundColor = .systemGray4
         [
             sentenceTextFieldView,
-            backgroundColorChangeButton,
+//            backgroundColorChangeButton,
             remainCountLabel,
         ].forEach{
             view.addSubview($0)
@@ -136,23 +138,24 @@ class EditSentenceViewController: UIViewController{
             $0.bottom.equalTo(view).inset(60)
         }
         
-        backgroundColorChangeButton.snp.makeConstraints{
-            $0.bottom.equalTo(view.snp.bottom).inset(10)
-            $0.leading.equalTo(sentenceTextFieldView)
-        }
+//        backgroundColorChangeButton.snp.makeConstraints{
+//            $0.bottom.equalTo(view.snp.bottom).inset(10)
+//            $0.leading.equalTo(sentenceTextFieldView)
+//        }
         
         remainCountLabel.snp.makeConstraints{
             $0.trailing.equalTo(view).inset(10)
-            $0.centerY.equalTo(backgroundColorChangeButton)
+            $0.bottom.equalTo(view).inset(10)
+//            $0.centerY.equalTo(backgroundColorChangeButton)
         }
         return view
     }()
-    
+
+    var selectedBood: Items?
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         UIConfigure()
     }
     
@@ -161,12 +164,35 @@ class EditSentenceViewController: UIViewController{
     @objc func tappedCancelButton(){
         self.dismiss(animated: true)
     }
+
+    //MARK: - 문장 저장 완료
     @objc func tappedSuccessButton(){
-        print("tapped Success button")
+        guard let books = self.selectedBood,
+              let sentence = sentenceTextFieldView.text
+        else { return }
+
+        guard let key = Database.database().reference().childByAutoId().key else { return }
+        let loginUser = Auth.auth().currentUser?.uid
+        let params = [
+            "id": loginUser,
+            "bookId": "\(key)",
+            "bookName": books.title,
+            "bookCover": books.image,
+            "bookAuth" : books.author,
+            "link" : books.link,
+            "descrips": books.description,
+            "sentence": sentence
+        ]
+        Database.database().reference().child("sentence/\(key)").setValue(params)
+        self.dismiss(animated: true)
     }
+
+    //MARK: - 배경색상 변경 버튼 액션
     @objc func tappedChangeBackGroundColorButton() {
         print("tapped ChangeBackGroundColor Button")
     }
+
+    //MARK: - 책 선택 버튼
     @objc func tappedSelectedBook(){
         let vc = SelectedViewController()
         let navVC = UINavigationController(rootViewController: vc)
@@ -238,5 +264,11 @@ extension EditSentenceViewController: UITextViewDelegate {
         updateCountLabel(characterCount: characterCount)
         
         return true
+    }
+}
+
+extension EditSentenceViewController: SelectedViewControllerDelegate {
+    func BookSelectDidTap(book: Book) {
+        print("book Select : \(book)")
     }
 }

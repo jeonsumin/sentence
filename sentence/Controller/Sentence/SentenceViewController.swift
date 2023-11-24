@@ -7,8 +7,12 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class SentenceViewController: UIViewController {
+
+    var viewModel: SentenceViewModel = .init()
+
     var isLike = false
     
     private lazy var backButton: UIButton = {
@@ -75,20 +79,13 @@ class SentenceViewController: UIViewController {
     private var bookCoverImage = UIImageView()
     private var bookNameLabel = UILabel()
     private var bookOwnerLabel = UILabel()
-    
+
     private lazy var bookSentenceView: UIView = {
         let view = UIView(frame: .zero)
         view.backgroundColor = .systemGray6
-        sentenceLabel.text = "많이 생각하고 있어요. 다른 사람이 쓴 글, 만든 책도 많이 보면서, 그들의 삶의 방식에 늘 매료되면서, 최대한 즐기면서, 그렇게 하고 있어요.(p.163)"
         sentenceLabel.numberOfLines = 0
-        
-        bookNameLabel.text = "아무도 알려주지 않은 도서관 사서 실무"
         bookNameLabel.font = .systemFont(ofSize: 12,weight: .bold)
-        
-        bookOwnerLabel.text = "강민선"
         bookOwnerLabel.font = .systemFont(ofSize: 12,weight: .bold)
-        
-        bookCoverImage.image = UIImage(named: "bookCover")
         bookCoverImage.contentMode = .scaleAspectFit
         [
             sentenceLabel,
@@ -107,8 +104,9 @@ class SentenceViewController: UIViewController {
         
         bookCoverImage.snp.makeConstraints{
             $0.leading.equalTo(view.snp.leading).offset(20)
-            $0.top.equalTo(sentenceLabel.snp.bottom).offset(45)
+            $0.bottom.equalTo(view.snp.bottom).offset(20)
             $0.width.equalTo(50)
+            $0.height.equalTo(180)
         }
         bookNameLabel.snp.makeConstraints{
             $0.leading.equalTo(bookCoverImage.snp.trailing).offset(10)
@@ -174,7 +172,17 @@ class SentenceViewController: UIViewController {
         super.viewDidLoad()
         
         UIConfigure()
+        setData()
     }
+
+
+    func setData(){
+        sentenceLabel.text = self.viewModel.sentence?.sentence
+        bookNameLabel.text = self.viewModel.sentence?.bookName
+        bookOwnerLabel.text = self.viewModel.sentence?.bookAuth
+        bookCoverImage.kf.setImage(with: self.viewModel.sentence?.bookCover)
+    }
+
     
     //MARK: - Function
     @objc func tappedBackButton(){
@@ -182,7 +190,7 @@ class SentenceViewController: UIViewController {
         print("backButton")
     }
     @objc func tappedheartButton(){
-        isLike = !isLike
+        isLike.toggle()
         isLike ? likeButton.setImage(UIImage(named: "heart_on"), for: .normal) : likeButton.setImage(UIImage(named: "heart"), for: .normal)
         
     }

@@ -51,6 +51,18 @@ class NormalLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+class BoldNormalLabel: UILabel {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        numberOfLines = 0
+        font = UIFont.boldSystemFont(ofSize: 14)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 class TitleLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)

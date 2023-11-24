@@ -33,7 +33,6 @@ class ProfileViewController: UIViewController {
         let label = UILabel()
         label.font = .systemFont(ofSize: 24,weight: .bold)
         label.textColor = .label
-        label.text = "구보라"
         
         return label
     }()
@@ -52,8 +51,8 @@ class ProfileViewController: UIViewController {
         label.font = .systemFont(ofSize: 14,weight: .bold)
         label.textColor = .label
         label.textAlignment = .left
-        label.text = "9999"
-        
+        label.text = "0"
+
         return label
     }()
     private lazy var sentenceVstackView: UIStackView = {
@@ -85,7 +84,7 @@ class ProfileViewController: UIViewController {
         label.font = .systemFont(ofSize: 14,weight: .bold)
         label.textColor = .label
         label.textAlignment = .left
-        label.text = "9999"
+        label.text = "0"
         
         return label
     }()
@@ -121,7 +120,7 @@ class ProfileViewController: UIViewController {
         label.font = .systemFont(ofSize: 14,weight: .bold)
         label.textColor = .label
         label.textAlignment = .left
-        label.text = "9999"
+        label.text = "0"
         
         return label
     }()
@@ -212,14 +211,28 @@ class ProfileViewController: UIViewController {
         
         return collectionview
     }()
-    
+
+
+    var viewModel: ProfileViewModel = .init()
+
+
     //MARK: - LifeCycel
     override func viewDidLoad() {
         super.viewDidLoad()
         UIConfigure()
         setupCollectionView()
+
+        bindViewModel()
+        viewModel.fetchProfile()
     }
     
+    func bindViewModel(){
+        self.viewModel.changeData = { [weak self] in
+            self?.userName.text = $0.name
+
+        }
+    }
+
     //MARK: setupCollectionView
     func setupCollectionView(){
         collectionView.dataSource = self

@@ -8,7 +8,8 @@
 import UIKit
 
 class HomeViewController: UITableViewController {
-    
+    var viewModel: HomeViewModel = .init()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         CommonUtils.navigationTitleConfigure(viewController: self, navigationTitle: "Feed")
@@ -18,16 +19,33 @@ class HomeViewController: UITableViewController {
         
         tableView.tableHeaderView = header
         tableView.separatorStyle = .none
+
+        bindViewModel()
+        viewModel.fetchSentence()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.fetchSentence()
+        bindViewModel()
+    }
+
+    func bindViewModel(){
+        self.viewModel.changeData = { [weak self] _ in
+            self?.tableView.reloadData()
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return viewModel.sentence?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ContentCell else { return UITableViewCell() }
         cell.delegate = self
         cell.selectionStyle = .none
+        if let data = self.viewModel.sentence?[indexPath.row] {
+            cell.setData(data)
+        }
         cell.index = indexPath.row
         return cell
     }
@@ -39,9 +57,10 @@ class HomeViewController: UITableViewController {
         let sentenceVC = SentenceViewController()
         sentenceVC.modalTransitionStyle = .crossDissolve
         sentenceVC.modalPresentationStyle = .overFullScreen
+        if let selectedData = self.viewModel.sentence?[indexPath.row] {
+            sentenceVC.viewModel.sentence = selectedData
+        }
         present(sentenceVC, animated: true)
-//        self.navigationController?.pushViewController(sentenceVC, animated: true)
-        
     }
     
 }

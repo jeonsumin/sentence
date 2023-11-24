@@ -6,6 +6,9 @@
 //
 
 import UIKit
+protocol SelectedViewControllerDelegate: AnyObject {
+    func BookSelectDidTap(book: Book)
+}
 
 class SelectedViewController: UIViewController {
     private lazy var textFieldView: UITextField = {
@@ -17,6 +20,7 @@ class SelectedViewController: UIViewController {
     }()
     
     private lazy var tableView = UITableView()
+    weak var delegate: SelectedViewControllerDelegate?
     
     var books: Book? {
         didSet{
@@ -94,7 +98,8 @@ extension SelectedViewController: UITableViewDelegate, UITableViewDataSource {
         let data = books?.items[indexPath.row]
         guard let preVC = self.presentingViewController as? EditSentenceViewController else { return }
         preVC.selectedBook.setTitle(data?.title,for: .normal)
-//        selectedDelegate?.didSelectBook(data: data!)
+        preVC.selectedBood = books?.items[indexPath.row]
+        delegate?.BookSelectDidTap(book: books!)
         self.dismiss(animated: true)
     }
 }

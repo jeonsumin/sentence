@@ -7,9 +7,15 @@
 
 import UIKit
 import SnapKit
+import FirebaseDatabase
+import FirebaseAuth
+import NaverThirdPartyLogin
 
 class SetNameViewController:UIViewController {
-    
+
+    let databaseRef = Database.database().reference()
+    let naverLoginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
+
     lazy var backButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "back_arrow"), for: .normal)
@@ -32,10 +38,10 @@ class SetNameViewController:UIViewController {
     var successButton: UIButton = {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = 16
-        button.layer.borderColor = UIColor.systemGray5.cgColor
+        button.layer.borderColor = UIColor.systemGray3.cgColor
         button.layer.borderWidth = 1
         button.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        button.tintColor = .systemGray5
+        button.tintColor = .systemGray3
         button.isEnabled = false
 
         return button
@@ -47,7 +53,7 @@ class SetNameViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIConfigure()
-        
+
 //        self.navigationItem.setHidesBackButton(true, animated: true)
 //        self.navigationItem.backButtonTitle = " "
         
@@ -61,6 +67,9 @@ class SetNameViewController:UIViewController {
 extension SetNameViewController {
     @objc func tappedNextTermButton(){
         let nextVC = StartViewController()
+        if let user = Auth.auth().currentUser {
+            databaseRef.child("user").child(user.uid).setValue(["username": textField.text])
+        }
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     

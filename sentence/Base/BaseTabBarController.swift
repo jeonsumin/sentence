@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
     //MARK: - Properties
@@ -104,7 +105,8 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     ///  로그인 유무 확인
     private func validateAuth(){
-        let loginToken = UserDefaults.standard.string(forKey: "naverLoginToken")
+//        let loginToken = UserDefaults.standard.string(forKey: "loginToken")
+        let loginToken = Auth.auth().currentUser?.uid
         
         if loginToken == nil {
             let vc = LoginViewController()
