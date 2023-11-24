@@ -165,6 +165,7 @@ class EditSentenceViewController: UIViewController{
         self.dismiss(animated: true)
     }
 
+    var currentUser: User?
     //MARK: - 문장 저장 완료
     @objc func tappedSuccessButton(){
         guard let books = self.selectedBood,
@@ -172,7 +173,8 @@ class EditSentenceViewController: UIViewController{
         else { return }
 
         guard let key = Database.database().reference().childByAutoId().key else { return }
-        let loginUser = Auth.auth().currentUser?.uid
+        guard let loginUser = Auth.auth().currentUser?.uid else { return }
+
         let params = [
             "id": loginUser,
             "bookId": "\(key)",
@@ -181,8 +183,9 @@ class EditSentenceViewController: UIViewController{
             "bookAuth" : books.author,
             "link" : books.link,
             "descrips": books.description,
-            "sentence": sentence
-        ]
+            "sentence": sentence,
+            "createDate": "\(Date())"
+        ] as [String : Any]
         Database.database().reference().child("sentence/\(key)").setValue(params)
         self.dismiss(animated: true)
     }

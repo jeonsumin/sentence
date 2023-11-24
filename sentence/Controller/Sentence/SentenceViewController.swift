@@ -73,7 +73,8 @@ class SentenceViewController: UIViewController {
     private lazy var sentenceLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .bold)
-        
+        label.numberOfLines = 0
+
         return label
     }()
     private var bookCoverImage = UIImageView()
@@ -100,18 +101,22 @@ class SentenceViewController: UIViewController {
             $0.leading.equalTo(view.snp.leading).offset(20)
             $0.trailing.equalTo(view.snp.trailing).offset(-60)
             $0.top.equalTo(view.snp.top).inset(160)
+            $0.height.lessThanOrEqualTo(10)
         }
         
         bookCoverImage.snp.makeConstraints{
             $0.leading.equalTo(view.snp.leading).offset(20)
             $0.bottom.equalTo(view.snp.bottom).offset(20)
+            $0.top.equalTo(sentenceLabel.snp.bottom)
             $0.width.equalTo(50)
             $0.height.equalTo(180)
         }
+
         bookNameLabel.snp.makeConstraints{
             $0.leading.equalTo(bookCoverImage.snp.trailing).offset(10)
             $0.top.equalTo(bookCoverImage.snp.top).inset(80)
         }
+
         bookOwnerLabel.snp.makeConstraints{
             $0.leading.equalTo(bookNameLabel.snp.leading)
             $0.top.equalTo(bookNameLabel.snp.bottom)
@@ -181,6 +186,11 @@ class SentenceViewController: UIViewController {
         bookNameLabel.text = self.viewModel.sentence?.bookName
         bookOwnerLabel.text = self.viewModel.sentence?.bookAuth
         bookCoverImage.kf.setImage(with: self.viewModel.sentence?.bookCover)
+
+        guard let userId = self.viewModel.sentence?.id else { return }
+        FirebaseManager.shared.fetchCurrentUser(userId) { user in
+            self.userNameLabel.text = user.username
+        }
     }
 
     

@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct Sentence: Decodable {
+struct Sentence: Codable {
     let id: String
+    var user: User?
     let bookName: String
     let bookId: String
     let bookCover: URL
@@ -16,4 +17,5 @@ struct Sentence: Decodable {
     let link: URL
     let descrips: String
     let sentence: String
+    let createDate: String
 }

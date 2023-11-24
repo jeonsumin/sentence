@@ -18,10 +18,15 @@ class ProfileViewModel {
     func fetchProfile(){
         if let currentUser = Auth.auth().currentUser?.uid {
             Database.database().reference().child("user/\(currentUser)").getData { _, snapshot in
-                let value = snapshot?.value as? NSDictionary
-                let username = value?["username"] as? String ?? ""
-                self.user = .init(id: currentUser,name: username)
-                self.changeData?(self.user!)
+                let value = snapshot?.value
+                print("value : \(value)")
+//                do {
+//                    let user = try DataLoader.load(json: value as! String, for: User.self)
+//                    print("fetch user : \(user)")
+//                    self.changeData?(self.user!)
+//                } catch {
+//                    print(error.localizedDescription)
+//                }
             }
         }
 

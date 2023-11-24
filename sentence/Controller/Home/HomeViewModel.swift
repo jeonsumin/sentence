@@ -26,9 +26,11 @@ class HomeViewModel {
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: value,options: [])
                     let decoded = try JSONDecoder().decode(Sentence.self, from: jsonData)
+
                     sentences.append(decoded)
+
                 } catch {
-                    print(error.localizedDescription)
+                    print("Faild JSON Pase home view model fetch sentence: \(error.localizedDescription)")
                 }
             }
             self.sentence = sentences.reversed()

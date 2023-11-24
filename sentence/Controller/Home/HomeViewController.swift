@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class HomeViewController: UITableViewController {
     var viewModel: HomeViewModel = .init()
 
@@ -69,9 +68,8 @@ extension HomeViewController: ContentCellDelegate {
     
     //Cell tag 설정된 델리게이트
     func tappedHeartButton(index: Int) {
-        print("index ::: \(index)")
         let cell = ContentCell()
-        cell.isLike = !cell.isLike
+        cell.isLike.toggle()
     }
     
     func tappedBookmarkButton() {

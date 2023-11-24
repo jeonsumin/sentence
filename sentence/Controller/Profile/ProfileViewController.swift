@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     
@@ -227,9 +228,10 @@ class ProfileViewController: UIViewController {
     }
     
     func bindViewModel(){
-        self.viewModel.changeData = { [weak self] in
-            self?.userName.text = $0.name
-
+        FirebaseManager.shared.fetchCurrentUser(Auth.auth().currentUser!.uid) { user in
+//            if let user = user.username {
+            self.userName.text = user.username
+//            }
         }
     }
 

@@ -54,6 +54,7 @@
 		DE6CF1612B0DDE370081986B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6CF1602B0DDE370081986B /* HomeViewModel.swift */; };
 		DE6CF1632B0DDEA00081986B /* Sentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6CF1622B0DDEA00081986B /* Sentence.swift */; };
 		DE6CF1652B106C9C0081986B /* SentenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6CF1642B106C9C0081986B /* SentenceViewModel.swift */; };
+		DE6CF1672B10778C0081986B /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6CF1662B10778C0081986B /* DataLoader.swift */; };
 		DEA1427C2B0C3CCF008EAEBD /* ProfileConfigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA1427B2B0C3CCF008EAEBD /* ProfileConfigureViewController.swift */; };
 		DECE1D672A8BC6C80043D323 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECE1D662A8BC6C80043D323 /* FirebaseManager.swift */; };
 		DEE52FB52A8CC17A00EC11E4 /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE52FB42A8CC17A00EC11E4 /* AlamofireManager.swift */; };
@@ -112,6 +113,7 @@
 		DE6CF1602B0DDE370081986B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DE6CF1622B0DDEA00081986B /* Sentence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentence.swift; sourceTree = "<group>"; };
 		DE6CF1642B106C9C0081986B /* SentenceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceViewModel.swift; sourceTree = "<group>"; };
+		DE6CF1662B10778C0081986B /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		DEA1427B2B0C3CCF008EAEBD /* ProfileConfigureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfigureViewController.swift; sourceTree = "<group>"; };
 		DECE1D662A8BC6C80043D323 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DEE52FB42A8CC17A00EC11E4 /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				76E480B32A5292DC00C85FDD /* CommonUtils.swift */,
+				DE6CF1662B10778C0081986B /* DataLoader.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				DECE1D672A8BC6C80043D323 /* FirebaseManager.swift in Sources */,
 				76A4E3A62A5FEE2E00033233 /* UITextField+.swift in Sources */,
 				76CD12D02A4E9B2500A0CFD3 /* HomeViewController.swift in Sources */,
+				DE6CF1672B10778C0081986B /* DataLoader.swift in Sources */,
 				769642692A5699A20016140E /* ColorPalette.swift in Sources */,
 				DEE52FB82A8CC1DA00EC11E4 /* Book.swift in Sources */,
 				DE6CF15D2B0C46540081986B /* LoginViewModel.swift in Sources */,

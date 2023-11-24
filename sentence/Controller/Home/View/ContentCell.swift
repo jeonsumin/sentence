@@ -58,7 +58,7 @@ class ContentCell: UITableViewCell {
     private lazy var sentenceLabel: UILabel = {
         let label = UILabel()
         label.text = "많이 생각하고 있어요. 다른 사람이 쓴 글,만든 책도 많이 보면서, 그들의 삶의 방식에 늘 매료되면서, 최대한 즐기면서, 그렇게 하고 있어요.(p.163)"
-        label.numberOfLines = 0
+        label.numberOfLines = 10
         label.font = .systemFont(ofSize: 16,weight: .medium)
         
         return label
@@ -132,9 +132,14 @@ class ContentCell: UITableViewCell {
     }
 
     func setData(_ data: Sentence){
+        FirebaseManager.shared.fetchCurrentUser(data.id) { user in
+            self.userNameLabel.text = user.username
+        }
+
         self.sentenceLabel.text = data.sentence
         self.sentenceDescriptionLabel.text = data.bookName
         self.bookOwnerLabel.text = data.bookAuth
+        self.uploadTimelabel.text = data.createDate
     }
 }
 
