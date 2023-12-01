@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import FirebaseAuth
+import Kingfisher
 
 class ProfileViewController: UIViewController {
     
@@ -52,7 +53,7 @@ class ProfileViewController: UIViewController {
         label.font = .systemFont(ofSize: 14,weight: .bold)
         label.textColor = .label
         label.textAlignment = .left
-        label.text = "0"
+
 
         return label
     }()
@@ -180,7 +181,6 @@ class ProfileViewController: UIViewController {
         let image = UIImageView()
         image.layer.cornerRadius = 90 / 2
         image.contentMode = .scaleAspectFill
-        image.backgroundColor = .black
         
         return image
     }()
@@ -224,14 +224,23 @@ class ProfileViewController: UIViewController {
         setupCollectionView()
 
         bindViewModel()
-        viewModel.fetchProfile()
+        viewModel.fetchMySentence()
+    }
+
+    func setupData(){
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        FirebaseManager.shared.fetchCurrentUser(userId) { user in
+            self.userName.text = user.username
+            self.userThumnailImage.kf.setImage(with: user.thumbnailURL)
+        }
+        self.sentenceCount.text = "\(self.viewModel.sentenceTotalCount)"
+
     }
     
     func bindViewModel(){
-        FirebaseManager.shared.fetchCurrentUser(Auth.auth().currentUser!.uid) { user in
-//            if let user = user.username {
-            self.userName.text = user.username
-//            }
+        viewModel.changeSenetance = { [weak self] _ in
+            self?.collectionView.reloadData()
+            self?.setupData()
         }
     }
 
@@ -245,12 +254,15 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController:UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return viewModel.sentences?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UploadSentenceCell.identifier , for: indexPath) as? UploadSentenceCell else { return UICollectionViewCell() }
-        
+
+        if let data = self.viewModel.sentences?[indexPath.item] {
+            cell.setData(data)
+        }
         return cell
     }
     

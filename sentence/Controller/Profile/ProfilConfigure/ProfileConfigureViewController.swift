@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileConfigureViewController: UITableViewController {
     let settingsString: [String] = [
@@ -38,6 +39,12 @@ class ProfileConfigureViewController: UITableViewController {
         let lastItem = settingsString.lastIndex(of: "로그아웃")
         if indexPath.row == lastItem {
             UserDefaults.standard.set(nil, forKey: "naverLoginToken")
+            do {
+                try Auth.auth().signOut()
+            } catch {
+                print("Failed firebase Sign out :::   \(error.localizedDescription)")
+            }
+
             let vc = LoginViewController()
             let navVC = UINavigationController(rootViewController: vc)
             navVC.modalPresentationStyle = .fullScreen

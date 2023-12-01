@@ -13,6 +13,7 @@ protocol SelectedViewControllerDelegate: AnyObject {
 class SelectedViewController: UIViewController {
     private lazy var textFieldView: UITextField = {
         let field = UITextField()
+        field.addLeftPadding()
         field.backgroundColor = UIColor(hex: "#EFEFEF")
         field.placeholder = "책을 선택해주세요"
         field.layer.cornerRadius = 8

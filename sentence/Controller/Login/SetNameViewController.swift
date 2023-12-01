@@ -67,8 +67,11 @@ class SetNameViewController:UIViewController {
 extension SetNameViewController {
     @objc func tappedNextTermButton(){
         let nextVC = StartViewController()
-        if let user = Auth.auth().currentUser {
-            databaseRef.child("user").child(user.uid).setValue(["username": textField.text])
+        if let user = Auth.auth().currentUser?.uid {
+            databaseRef.child("user").child(user).setValue([
+                "username": textField.text,
+                "thumbnailURL": "https://trdevweb.kro.kr/temp/3ba8c57d9f553f857137fc1fda955ecb.png"
+            ])
         }
         self.navigationController?.pushViewController(nextVC, animated: true)
     }

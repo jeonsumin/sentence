@@ -45,4 +45,8 @@ class UploadSentenceCell: UICollectionViewCell {
             $0.bottom.equalTo(sentenceView.snp.bottom).offset(-10)
         }
     }
+
+    func setData(_ data: Sentence){
+        sentenceLabel.text = data.sentence
+    }
 }

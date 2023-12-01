@@ -12,6 +12,7 @@ import Alamofire
 import KakaoSDKAuth
 import KakaoSDKUser
 import FirebaseAuth
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
 
@@ -107,6 +108,8 @@ extension LoginViewController {
 
         Auth.auth().signIn(withEmail: "soomin@naver.com", password: "123qweasd") { result, _ in
             if result != nil {
+                self.dismiss(animated: true)
+            } else {
                 self.nextPageToPushController()
             }
         }
@@ -147,21 +150,34 @@ extension LoginViewController {
     }
     
     @objc func tappedNaverLoginButton(){
-        naverLoginInstance?.delegate = self
-        naverLoginInstance?.requestThirdPartyLogin()
-        getNaverLoginInfo()
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(naverLoginInstance?.accessToken, forKey: "loginToken")
-
-
-        if (userDefaults.string(forKey: "loginToken") != nil){
-            self.nextPageToPushController()
+        Auth.auth().signIn(withEmail: "soomin1@naver.com", password: "123qweasd") { result, _ in
+            if result != nil {
+                self.dismiss(animated: true)
+            } else{
+                self.nextPageToPushController()
+            }
         }
+//        naverLoginInstance?.delegate = self
+//        naverLoginInstance?.requestThirdPartyLogin()
+//        getNaverLoginInfo()
+//        let userDefaults = UserDefaults.standard
+//        userDefaults.set(naverLoginInstance?.accessToken, forKey: "loginToken")
+//
+//
+//        if (userDefaults.string(forKey: "loginToken") != nil){
+//            self.nextPageToPushController()
+//        }
         
     }
     
     @objc func tappedAppleLoginButton(){
-        self.nextPageToPushController()
+        Auth.auth().signIn(withEmail: "soomin2@naver.com", password: "123qweasd") { result, _ in
+            if result != nil {
+                self.dismiss(animated: true)
+            } else {
+                self.nextPageToPushController()
+            }
+        }
     }
     
     func nextPageToPushController(){
